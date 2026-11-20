@@ -1,0 +1,130 @@
+/* Portfólio — estilos compartilhados */
+:root {
+  --fundo: #f7f5f0;
+  --cartao: #ffffff;
+  --texto: #1d1b18;
+  --suave: #5f5a52;
+  --linha: #e4dfd5;
+  --destaque: #c2410c;
+  --destaque-suave: #fdeee4;
+  --sombra: 0 1px 2px rgb(29 27 24 / 0.06), 0 8px 24px rgb(29 27 24 / 0.06);
+  --raio: 14px;
+  --largura: 1080px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --fundo: #141311;
+    --cartao: #1d1c19;
+    --texto: #f1eee8;
+    --suave: #aaa398;
+    --linha: #34312c;
+    --destaque: #fb923c;
+    --destaque-suave: #2c1d12;
+    --sombra: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px rgb(0 0 0 / 0.3);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --fundo: #141311;
+  --cartao: #1d1c19;
+  --texto: #f1eee8;
+  --suave: #aaa398;
+  --linha: #34312c;
+  --destaque: #fb923c;
+  --destaque-suave: #2c1d12;
+  --sombra: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px rgb(0 0 0 / 0.3);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font: 17px/1.65 "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+h1, h2, h3 { font-family: "Fraunces", Georgia, serif; font-weight: 600; line-height: 1.15; margin: 0 0 .5em; letter-spacing: -0.01em; }
+h1 { font-size: clamp(2.2rem, 6vw, 3.6rem); }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); }
+h3 { font-size: 1.25rem; }
+p { margin: 0 0 1em; }
+:focus-visible { outline: 3px solid var(--destaque); outline-offset: 3px; border-radius: 4px; }
+
+.conteiner { max-width: var(--largura); margin: 0 auto; padding: 0 16px; }
+@media (min-width: 700px) { .conteiner { padding: 0 32px; } }
+
+/* topo */
+.topo { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--fundo) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--linha); }
+.topo .conteiner { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+.marca { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 1.15rem; text-decoration: none; }
+.marca span { color: var(--destaque); }
+.menu { display: flex; gap: 20px; font-size: .95rem; }
+.menu a { text-decoration: none; color: var(--suave); }
+.menu a:hover { color: var(--texto); }
+@media (max-width: 520px) { .menu a.opcional { display: none; } }
+
+/* seções */
+section { padding: 72px 0; }
+.rotulo { display: inline-block; font-size: .8rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--destaque); margin-bottom: 12px; }
+.sub { color: var(--suave); font-size: 1.1rem; max-width: 640px; }
+
+.hero { padding: 88px 0 56px; }
+.hero h1 em { font-style: italic; color: var(--destaque); }
+.acoes { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.botao { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 999px; font-weight: 600; text-decoration: none; border: 1px solid var(--linha); background: var(--cartao); }
+.botao:hover { border-color: var(--texto); }
+.botao.primario { background: var(--texto); color: var(--fundo); border-color: var(--texto); }
+.botao.primario:hover { opacity: .9; }
+
+/* cartões de projeto */
+.projeto { display: grid; gap: 0; background: var(--cartao); border: 1px solid var(--linha); border-radius: var(--raio); overflow: hidden; box-shadow: var(--sombra); text-decoration: none; transition: transform .2s ease, box-shadow .2s ease; }
+.projeto:hover { transform: translateY(-3px); }
+@media (prefers-reduced-motion: reduce) { .projeto, html { transition: none; scroll-behavior: auto; } .projeto:hover { transform: none; } }
+.projeto .capa { background: var(--destaque-suave); padding: 24px 24px 0; }
+.projeto .capa img { border-radius: 10px 10px 0 0; box-shadow: var(--sombra); }
+.projeto .info { padding: 24px; }
+.projeto .info p { color: var(--suave); }
+@media (min-width: 860px) {
+  .projeto { grid-template-columns: 1.25fr 1fr; }
+  .projeto .capa { padding: 32px 0 0 32px; }
+  .projeto .capa img { border-radius: 10px 0 0 0; }
+  .projeto .info { padding: 36px; align-self: center; }
+}
+.etiquetas { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 16px 0 0; }
+.etiquetas li { font-size: .82rem; padding: 4px 10px; border-radius: 999px; background: var(--fundo); border: 1px solid var(--linha); color: var(--suave); }
+.ver { font-weight: 600; color: var(--destaque); }
+
+/* grade de habilidades / fatos */
+.grade { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.bloco { background: var(--cartao); border: 1px solid var(--linha); border-radius: var(--raio); padding: 22px; }
+.bloco h3 { font-size: 1.1rem; }
+.bloco p { color: var(--suave); margin: 0; font-size: .97rem; }
+
+/* estudo de caso */
+.caso-cabeca { padding: 64px 0 32px; }
+.voltar { display: inline-block; margin-bottom: 24px; color: var(--suave); text-decoration: none; font-size: .95rem; }
+.voltar:hover { color: var(--texto); }
+.fatos { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); margin-top: 32px; padding: 20px 0; border-top: 1px solid var(--linha); border-bottom: 1px solid var(--linha); }
+.fatos dt { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--suave); }
+.fatos dd { margin: 2px 0 0; font-weight: 600; }
+.texto { max-width: 720px; }
+.texto ul { padding-left: 1.2em; }
+.texto li { margin-bottom: .4em; }
+figure { margin: 32px 0; }
+figure img { border-radius: var(--raio); border: 1px solid var(--linha); box-shadow: var(--sombra); }
+figcaption { color: var(--suave); font-size: .92rem; margin-top: 10px; }
+.celulares { display: grid; gap: 16px; grid-template-columns: repeat(3, 1fr); max-width: 760px; }
+.celulares img { border-radius: 22px; }
+@media (max-width: 560px) { .celulares { grid-template-columns: 1fr 1fr; } .celulares figure:last-child { display: none; } }
+.celulares figure { margin: 0; }
+.destaque-caixa { background: var(--destaque-suave); border-radius: var(--raio); padding: 24px; margin: 32px 0; }
+.destaque-caixa p:last-child { margin: 0; }
+
+/* rodapé */
+.rodape { border-top: 1px solid var(--linha); padding: 40px 0; color: var(--suave); font-size: .92rem; }
+.rodape .conteiner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
