@@ -1,4 +1,4 @@
-# Portfólio — Thiago Ferreira
+# Portfólio — Thiago Proença
 
 Site estático (HTML + CSS, sem build), publicado pelo GitHub Pages.
 
