@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Midnight Racing · Thiago Proença</title>
+  <meta name="description" content="Site com login social e um jogo de corrida em primeira pessoa desenhado em canvas, com portal para outros mundos e um modo copiloto.">
+  <meta property="og:title" content="Midnight Racing · Projeto da Etec">
+  <meta property="og:image" content="../img/etec/mid-mundo-vulcao.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="conteiner">
+      <a class="marca" href="../">Thiago<span>.</span></a>
+      <nav class="menu" aria-label="Seções">
+        <a href="../#projetos">Pessoais</a>
+        <a href="../#etec">Etec</a>
+        <a href="../#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="conteiner">
+      <div class="caso-cabeca">
+        <a class="voltar" href="../#etec">← Projetos da Etec</a>
+        <span class="rotulo" style="display:block">Programação Web III</span>
+        <h1>Midnight Racing</h1>
+        <p class="sub">Site com login social e um jogo de corrida em primeira pessoa desenhado em canvas, com portal para outros mundos e um modo copiloto.</p>
+        <dl class="fatos">
+          <div><dt>Matéria</dt><dd>Programação Web III</dd></div>
+          <div><dt>Dupla</dt><dd>Thiago Proença e Frederick Ferreira</dd></div>
+          <div><dt>Escola</dt><dd>Etec Dr. Demétrio Azevedo Jr.</dd></div>
+          <div><dt>Tecnologias</dt><dd>Next.js, Auth.js (OAuth), Canvas 2D</dd></div>
+        </dl>
+      </div>
+
+      <figure>
+        <img src="../img/etec/midnight-login.webp" alt="Tela de entrada do Midnight Racing com login pelo Google e pelo Facebook" width="1440" height="900">
+        <figcaption>Entrada com login social (Google e Facebook) e escolha da classe: Piloto ou Copiloto.</figcaption>
+      </figure>
+      <div class="texto">
+        <h2>Como funciona</h2>
+        <p>O jogador entra com a conta do Google ou do Facebook e escolhe a classe. A sessão é protegida em duas barreiras (proxy e verificação no servidor): o piloto só entra na pista e o copiloto só entra no banco do passageiro.</p>
+        <ul>
+        <li><strong>Corrida</strong> de 2 voltas contra 3 rivais, com câmbio, nitro, batidas e cronômetro por volta.</li>
+        <li><strong>Portal:</strong> no fim da 1ª volta, a pista leva a corrida para outro mundo.</li>
+        <li><strong>Modo copiloto:</strong> um robô dirige e o usuário usa um contador Geiger para escolher o mundo numa roleta. Se ninguém escolher a tempo, o portal se abre no mundo infernal e o guardião encerra a corrida.</li>
+        <li><strong>Painel</strong> com perfil, garagem e ranking dos corredores.</li>
+        </ul>
+      </div>
+      <div class="galeria">
+        <figure>
+          <img src="../img/etec/mid-piloto.webp" alt="Escolha do carro antes da corrida" width="1440" height="900" loading="lazy">
+          <figcaption>Escolha do carro, cada um com velocidade, aceleração e controle diferentes.</figcaption>
+        </figure>
+        <figure>
+          <img src="../img/etec/mid-corrida.webp" alt="Corrida na cidade vista de dentro do carro" width="1440" height="900" loading="lazy">
+          <figcaption>Corrida no Midnight Downtown.</figcaption>
+        </figure>
+        <figure>
+          <img src="../img/etec/mid-dashboard.webp" alt="Painel do jogador com perfil, classe e garagem" width="1440" height="900" loading="lazy">
+          <figcaption>Painel: perfil, classe e garagem.</figcaption>
+        </figure>
+      </div>
+      <div class="texto">
+        <h2>Os mapas</h2>
+        <p>Cada mundo tem pista, cenário, cores e criaturas próprias, todos desenhados em canvas, sem imagens prontas.</p>
+      </div>
+      <div class="galeria">
+        <figure>
+          <img src="../img/etec/mid-mundo-vulcao.webp" alt="Pista no mundo vulcânico com lava e vulcão ao fundo" width="1440" height="900" loading="lazy">
+          <figcaption>Mundo vulcânico.</figcaption>
+        </figure>
+        <figure>
+          <img src="../img/etec/mid-mundo-jurassico.webp" alt="Pista no mundo pré-histórico com dinossauros" width="1440" height="900" loading="lazy">
+          <figcaption>Mundo pré-histórico.</figcaption>
+        </figure>
+        <figure>
+          <img src="../img/etec/mid-mundo-gelo.webp" alt="Pista no mundo do gelo com pinheiros e montanhas nevadas" width="1440" height="900" loading="lazy">
+          <figcaption>Mundo do gelo.</figcaption>
+        </figure>
+        <figure>
+          <img src="../img/etec/mid-mundo-digital.webp" alt="Pista no mundo digital em linhas verdes" width="1440" height="900" loading="lazy">
+          <figcaption>Mundo digital.</figcaption>
+        </figure>
+      </div>
+      <div class="texto">
+        <h2>Modo copiloto</h2>
+      </div>
+      <div class="galeria">
+        <figure>
+          <img src="../img/etec/mid-copiloto.webp" alt="Banco do passageiro com o contador Geiger" width="1440" height="900" loading="lazy">
+          <figcaption>O robô dirige; o copiloto segura o contador Geiger.</figcaption>
+        </figure>
+        <figure>
+          <img src="../img/etec/mid-copiloto-roleta.webp" alt="Roleta do contador Geiger para escolher o mundo" width="1440" height="900" loading="lazy">
+          <figcaption>A roleta indica o mundo: Espaço escolhe.</figcaption>
+        </figure>
+        <figure>
+          <img src="../img/etec/mid-inferno.webp" alt="Mundo infernal com o guardião destruindo a pista" width="1440" height="900" loading="lazy">
+          <figcaption>Ninguém escolheu: o portal abre no mundo infernal.</figcaption>
+        </figure>
+        <figure>
+          <img src="../img/etec/mid-ranking.webp" alt="Ranking dos corredores com melhor tempo e vitórias" width="1440" height="900" loading="lazy">
+          <figcaption>Ranking dos corredores.</figcaption>
+        </figure>
+      </div>
+
+      <section style="padding:48px 0 72px">
+        <div class="acoes" style="margin:0">
+          <a class="botao primario" href="../#etec">Ver outros projetos da Etec</a>
+          <a class="botao" href="../#contato">Contato</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="conteiner">
+      <span>© 2026 Thiago Proença</span>
+      <span>Prints com dados fictícios de demonstração.</span>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meus Feeds · Thiago Proença</title>
+  <meta name="description" content="App que consome uma API REST: lista paginada de postagens, tela de detalhes, nova postagem e mensagens de erro claras quando não há conexão.">
+  <meta property="og:title" content="Meus Feeds · Projeto da Etec">
+  <meta property="og:image" content="../img/etec/feeds-lista.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="conteiner">
+      <a class="marca" href="../">Thiago<span>.</span></a>
+      <nav class="menu" aria-label="Seções">
+        <a href="../#projetos">Pessoais</a>
+        <a href="../#etec">Etec</a>
+        <a href="../#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="conteiner">
+      <div class="caso-cabeca">
+        <a class="voltar" href="../#etec">← Projetos da Etec</a>
+        <span class="rotulo" style="display:block">Programação de Aplicativos Mobile II</span>
+        <h1>Meus Feeds</h1>
+        <p class="sub">App que consome uma API REST: lista paginada de postagens, tela de detalhes, nova postagem e mensagens de erro claras quando não há conexão.</p>
+        <dl class="fatos">
+          <div><dt>Matéria</dt><dd>Programação de Aplicativos Mobile II</dd></div>
+          <div><dt>Escola</dt><dd>Etec Dr. Demétrio Azevedo Jr.</dd></div>
+          <div><dt>Tecnologias</dt><dd>React Native, Expo, API REST</dd></div>
+        </dl>
+      </div>
+
+      <div class="texto">
+        <h2>O que o app faz</h2>
+        <p>O app busca as postagens numa API REST, mostra a lista com paginação e abre cada postagem em uma tela de detalhes. A tela de nova postagem envia os dados para a API. Quando não há internet, o app explica o problema e oferece um botão para tentar de novo, em vez de ficar carregando para sempre.</p>
+      </div>
+      <h2 style="margin-top:48px">Telas</h2>
+      <div class="celulares todas">
+        <figure><img src="../img/etec/feeds-lista.webp" alt="Lista de postagens" width="520" height="1125" loading="lazy"><figcaption>Lista de postagens.</figcaption></figure>
+        <figure><img src="../img/etec/feeds-detalhe.webp" alt="Detalhe de uma postagem" width="520" height="1125" loading="lazy"><figcaption>Detalhe da postagem.</figcaption></figure>
+        <figure><img src="../img/etec/feeds-nova.webp" alt="Formulário de nova postagem" width="520" height="1125" loading="lazy"><figcaption>Nova postagem.</figcaption></figure>
+        <figure><img src="../img/etec/feeds-erro.webp" alt="Mensagem de erro quando não há conexão" width="520" height="1125" loading="lazy"><figcaption>Sem conexão: mensagem clara e "Tentar novamente".</figcaption></figure>
+      </div>
+
+      <section style="padding:48px 0 72px">
+        <div class="acoes" style="margin:0">
+          <a class="botao primario" href="../#etec">Ver outros projetos da Etec</a>
+          <a class="botao" href="../#contato">Contato</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="conteiner">
+      <span>© 2026 Thiago Proença</span>
+      <span>Prints com dados fictícios de demonstração.</span>
+    </div>
+  </footer>
+</body>
+</html>

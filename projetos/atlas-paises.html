@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atlas de países · Thiago Proença</title>
+  <meta name="description" content="Os 254 países e territórios com bandeira, paginação e página de detalhes, consumindo a API REST Countries com cache diário.">
+  <meta property="og:title" content="Atlas de países · Projeto da Etec">
+  <meta property="og:image" content="../img/etec/paises-lista.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="conteiner">
+      <a class="marca" href="../">Thiago<span>.</span></a>
+      <nav class="menu" aria-label="Seções">
+        <a href="../#projetos">Pessoais</a>
+        <a href="../#etec">Etec</a>
+        <a href="../#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="conteiner">
+      <div class="caso-cabeca">
+        <a class="voltar" href="../#etec">← Projetos da Etec</a>
+        <span class="rotulo" style="display:block">Programação Web III</span>
+        <h1>Atlas de países</h1>
+        <p class="sub">Os 254 países e territórios com bandeira, paginação e página de detalhes, consumindo a API REST Countries com cache diário.</p>
+        <dl class="fatos">
+          <div><dt>Matéria</dt><dd>Programação Web III</dd></div>
+          <div><dt>Escola</dt><dd>Etec Dr. Demétrio Azevedo Jr.</dd></div>
+          <div><dt>Tecnologias</dt><dd>Next.js, Server Components, API REST</dd></div>
+        </dl>
+      </div>
+
+      <figure>
+        <img src="../img/etec/paises-lista.webp" alt="Lista de países com as bandeiras em grade" width="1440" height="900">
+        <figcaption>Lista em ordem alfabética, com bandeira, região e paginação.</figcaption>
+      </figure>
+      <div class="texto">
+        <h2>Como funciona</h2>
+        <p>As páginas são geradas no servidor (Server Components), que busca os dados na API REST Countries e guarda em cache por um dia. Assim o site fica rápido e não consulta a API a cada visita. Cada país tem página própria com capital, população, área, região, idiomas e moedas.</p>
+      </div>
+      <div class="galeria">
+        <figure>
+          <img src="../img/etec/atlas-pagina.webp" alt="Terceira página da lista de países" width="1440" height="900" loading="lazy">
+          <figcaption>Paginação: países 31 a 45 de 254.</figcaption>
+        </figure>
+        <figure>
+          <img src="../img/etec/paises-brasil.webp" alt="Página de detalhes do Brasil" width="1440" height="900" loading="lazy">
+          <figcaption>Brasil.</figcaption>
+        </figure>
+        <figure>
+          <img src="../img/etec/atlas-japan.webp" alt="Página de detalhes do Japão" width="1440" height="900" loading="lazy">
+          <figcaption>Japão.</figcaption>
+        </figure>
+        <figure>
+          <img src="../img/etec/atlas-canada.webp" alt="Página de detalhes do Canadá" width="1440" height="900" loading="lazy">
+          <figcaption>Canadá.</figcaption>
+        </figure>
+        <figure>
+          <img src="../img/etec/atlas-argentina.webp" alt="Página de detalhes da Argentina" width="1440" height="900" loading="lazy">
+          <figcaption>Argentina.</figcaption>
+        </figure>
+        <figure>
+          <img src="../img/etec/atlas-south-africa.webp" alt="Página de detalhes da África do Sul com vários idiomas oficiais" width="1440" height="900" loading="lazy">
+          <figcaption>África do Sul, com os 11 idiomas oficiais.</figcaption>
+        </figure>
+      </div>
+      <h2 style="margin-top:48px">No celular</h2>
+      <div class="celulares todas">
+        <figure><img src="../img/etec/atlas-cel.webp" alt="Lista de países no celular" width="520" height="1125" loading="lazy"><figcaption>Lista no celular.</figcaption></figure>
+        <figure><img src="../img/etec/atlas-cel-pais.webp" alt="Detalhes do Japão no celular" width="520" height="1125" loading="lazy"><figcaption>Detalhes no celular.</figcaption></figure>
+      </div>
+
+      <section style="padding:48px 0 72px">
+        <div class="acoes" style="margin:0">
+          <a class="botao primario" href="../#etec">Ver outros projetos da Etec</a>
+          <a class="botao" href="../#contato">Contato</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="conteiner">
+      <span>© 2026 Thiago Proença</span>
+      <span>Prints com dados fictícios de demonstração.</span>
+    </div>
+  </footer>
+</body>
+</html>

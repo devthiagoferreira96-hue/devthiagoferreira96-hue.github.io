@@ -154,3 +154,8 @@ figcaption { color: var(--suave); font-size: .92rem; margin-top: 10px; }
 .link-card:hover { text-decoration: underline; }
 .link-titulo { text-decoration: none; }
 .link-titulo:hover { text-decoration: underline; }
+/* galeria de telas nas páginas da Etec */
+.galeria { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); margin: 32px 0; }
+.galeria figure { margin: 0; }
+.celulares figcaption { text-align: center; }
+@media (max-width: 560px) { .celulares.todas figure:last-child { display: block; } }

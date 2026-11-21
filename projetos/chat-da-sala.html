@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chat da Sala · Thiago Proença</title>
+  <meta name="description" content="Chat em tempo real para a turma, com servidor Node.js por WebSocket e aplicativo em React Native (Expo).">
+  <meta property="og:title" content="Chat da Sala · Projeto da Etec">
+  <meta property="og:image" content="../img/etec/chat-conversa.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="conteiner">
+      <a class="marca" href="../">Thiago<span>.</span></a>
+      <nav class="menu" aria-label="Seções">
+        <a href="../#projetos">Pessoais</a>
+        <a href="../#etec">Etec</a>
+        <a href="../#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="conteiner">
+      <div class="caso-cabeca">
+        <a class="voltar" href="../#etec">← Projetos da Etec</a>
+        <span class="rotulo" style="display:block">Programação de Aplicativos Mobile II</span>
+        <h1>Chat da Sala</h1>
+        <p class="sub">Chat em tempo real para a turma, com servidor Node.js por WebSocket e aplicativo em React Native (Expo).</p>
+        <dl class="fatos">
+          <div><dt>Matéria</dt><dd>Programação de Aplicativos Mobile II</dd></div>
+          <div><dt>Dupla</dt><dd>Thiago Proença e Frederick Ferreira</dd></div>
+          <div><dt>Escola</dt><dd>Etec Dr. Demétrio Azevedo Jr.</dd></div>
+          <div><dt>Tecnologias</dt><dd>React Native, Expo, WebSocket, Node.js</dd></div>
+        </dl>
+      </div>
+
+      <div class="texto">
+        <h2>O que o app faz</h2>
+        <ul>
+        <li><strong>Sala geral</strong> e grupos criados pelos alunos, públicos ou privados (entrada por código de convite).</li>
+        <li><strong>Mensagens</strong> de texto, fotos, áudio, figurinhas, arquivos e enquetes, com reações, edição e "apagar para todos".</li>
+        <li><strong>Entrega e leitura:</strong> ✓ enviada, ✓✓ entregue e ✓✓ azul lida, com a lista de quem leu.</li>
+        <li><strong>Perfil e status</strong> (disponível, ausente, ocupado), "online" e "visto por último".</li>
+        <li><strong>Reconexão automática</strong> com fila de envio: o que foi escrito sem conexão sai sozinho ao reconectar, sem duplicar.</li>
+        <li>O servidor guarda tudo em arquivo, então quem entra depois vê o histórico.</li>
+        </ul>
+      </div>
+      <h2 style="margin-top:48px">Telas</h2>
+      <div class="celulares todas">
+        <figure><img src="../img/etec/chat-entrar.webp" alt="Tela de entrada com nome e endereço do servidor" width="520" height="1125" loading="lazy"><figcaption>Entrada.</figcaption></figure>
+        <figure><img src="../img/etec/chat-home.webp" alt="Lista de conversas com quem está online" width="520" height="1125" loading="lazy"><figcaption>Conversas e quem está online.</figcaption></figure>
+        <figure><img src="../img/etec/chat-conversa.webp" alt="Conversa na Sala geral" width="520" height="1125" loading="lazy"><figcaption>Conversa na Sala geral.</figcaption></figure>
+        <figure><img src="../img/etec/chat-enquete.webp" alt="Enquete com votos e mensagem com reações" width="520" height="1125" loading="lazy"><figcaption>Enquete com votos e reações.</figcaption></figure>
+        <figure><img src="../img/etec/chat-leitura.webp" alt="Dados da mensagem mostrando quem leu" width="520" height="1125" loading="lazy"><figcaption>Entrega e leitura: lida por 3.</figcaption></figure>
+        <figure><img src="../img/etec/chat-perfil.webp" alt="Perfil com recado e status" width="520" height="1125" loading="lazy"><figcaption>Perfil e status.</figcaption></figure>
+      </div>
+
+      <section style="padding:48px 0 72px">
+        <div class="acoes" style="margin:0">
+          <a class="botao primario" href="../#etec">Ver outros projetos da Etec</a>
+          <a class="botao" href="../#contato">Contato</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="conteiner">
+      <span>© 2026 Thiago Proença</span>
+      <span>Prints com dados fictícios de demonstração.</span>
+    </div>
+  </footer>
+</body>
+</html>
