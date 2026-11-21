@@ -3,297 +3,165 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Thiago Proença · Desenvolvedor</title>
-  <meta name="description" content="Portfólio de Thiago Proença: sistemas web sob medida para pequenos negócios.">
-  <meta property="og:title" content="Thiago Proença · Desenvolvedor">
-  <meta property="og:description" content="Sistemas web sob medida para pequenos negócios.">
+  <title>Thiago Proença · Desenvolvedor Júnior / Full-Stack</title>
+  <meta name="description" content="Portfólio de Thiago Proença, desenvolvedor júnior full-stack: sistemas web, aplicativos e sites sob medida para pequenos negócios.">
+  <meta property="og:title" content="Thiago Proença · Desenvolvedor Júnior / Full-Stack">
+  <meta property="og:description" content="Sistemas web, aplicativos e sites sob medida para pequenos negócios.">
   <meta property="og:image" content="img/caixa-resina/projecao.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="topo">
     <div class="conteiner">
-      <a class="marca" href="./">Thiago<span>.</span></a>
+      <a class="marca" href="#inicio">Thiago Proença <span id="secao-atual">— Desenvolvedor Full-Stack</span></a>
       <nav class="menu" aria-label="Seções">
-        <a href="#projetos">Pessoais</a>
-        <a href="#etec">Etec</a>
+        <a href="#sobre">Sobre mim</a>
+        <a href="#competencias">Competências</a>
+        <a href="#experiencia">Experiência</a>
+        <a href="#projetos">Projetos</a>
         <a href="#contato">Contato</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="conteiner">
-        <span class="rotulo">Desenvolvedor web</span>
-        <h1>Sistemas que resolvem o <em>dia a dia</em> de pequenos negócios.</h1>
-        <p class="sub">Sou o Thiago, estudante do Técnico em Desenvolvimento de Sistemas na Etec Dr. Demétrio Azevedo Jr. Transformo planilhas e processos manuais em sistemas web e aplicativos simples de usar, feitos sob medida para quem vai usar.</p>
-        <div class="acoes">
-          <a class="botao primario" href="#projetos">Projetos pessoais</a>
-          <a class="botao" href="#etec">Projetos da Etec</a>
-        </div>
-      </div>
-    </section>
+  <main class="trilho">
+    <span class="ponto" id="ponto" aria-hidden="true"></span>
 
-    <section id="projetos">
+    <section class="abertura" id="inicio">
       <div class="conteiner">
-        <span class="rotulo">Projetos pessoais</span>
-        <h2>Fora da sala de aula</h2>
-        <p class="sub" style="margin-bottom:32px">Projetos que desenvolvi por conta própria, alguns já em uso de verdade.</p>
-
-        <a class="projeto" href="projetos/caixa-resina.html">
-          <div class="capa"><img src="img/caixa-resina/projecao.webp" alt="Tela do Extrato com a projeção do caixa do mês seguinte" width="1600" height="1000" loading="lazy"></div>
-          <div class="info">
-            <h3>Caixa + Resina</h3>
-            <p>Gestão financeira e de produção para uma empresa de extração de resina: caixa, cartões, projeção de saldo entre meses, cargas, produtores e conta corrente.</p>
-            <ul class="etiquetas" aria-label="Tecnologias">
-              <li>JavaScript</li><li>PWA</li><li>Tailwind CSS</li><li>IndexedDB</li><li>Playwright</li>
-            </ul>
-            <p style="margin:20px 0 0"><span class="ver">Ver estudo de caso →</span></p>
+        <div>
+          <p class="ola">Olá, eu sou</p>
+          <h1>Thiago Proença</h1>
+          <p class="cargo">Desenvolvedor Júnior / Full-Stack</p>
+          <p class="sub">Crio sistemas web, aplicativos e sites que resolvem o dia a dia de pequenos negócios. Trabalho com JavaScript, TypeScript, React, Next.js, Node.js e bancos PostgreSQL.</p>
+          <div class="acoes">
+            <a class="botao primario" href="#projetos">Ver projetos</a>
+            <a class="botao" href="#contato">Entrar em contato</a>
           </div>
-        </a>
+        </div>
+        <div class="foto">
+          <!-- Para usar a foto: salve como img/foto.webp e troque a linha abaixo por
+               <img src="img/foto.webp" alt="Foto de Thiago Proença" width="520" height="520"> -->
+          <span class="iniciais" aria-hidden="true">TP</span>
+        </div>
+      </div>
+    </section>
 
-        <h3 class="materia">Pet shop e clínica veterinária</h3>
-        <a class="projeto" href="projetos/banho-e-tosa.html">
-          <div class="capa"><img src="img/banho-e-tosa/agenda.webp" alt="Agenda do Banho e Tosa com os pets do dia em cada etapa" width="1600" height="1000" loading="lazy"></div>
-          <div class="info">
-            <h3>Banho e Tosa</h3>
-            <p>Agenda em tempo real com trava de horário no banco, leva e traz com rota de várias paradas no Google Maps, cobrança por serviço e porte e fechamento de caixa do dia com histórico imutável.</p>
-            <ul class="etiquetas" aria-label="Tecnologias">
-              <li>JavaScript</li><li>Supabase</li><li>PostgreSQL</li><li>PWA</li><li>Google Maps</li>
+    <section class="secao" id="sobre" data-secao="01 / 05 · Sobre mim">
+      <div class="conteiner">
+        <span class="rotulo">Conheça-me melhor</span>
+        <h2>Sobre mim</h2>
+        <div class="sobre-grade">
+          <div class="sobre-texto">
+            <p>Sou desenvolvedor full-stack com 1 ano e meio de experiência prática. Como freelancer, criei o sistema de caixa e produção que uma empresa de extração de resina usa no dia a dia e os sistemas de um pet shop e clínica veterinária: agenda, leva e traz, caixa, estoque e loja online.</p>
+            <p>Também estou concluindo o Técnico em Desenvolvimento de Sistemas na Etec, onde desenvolvi com a minha equipe o TCC Integra Jovem, uma plataforma que prepara jovens para a vida adulta.</p>
+            <p class="citacao">Minha paixão é transformar planilhas e processos manuais em sistemas simples de usar, que resolvem problemas de verdade.</p>
+            <ul class="principios">
+              <li>Converso com quem vai usar antes de escrever o código.</li>
+              <li>Explico a solução em palavras simples e entrego em etapas curtas.</li>
+              <li>Testo as regras e as telas antes de cada entrega.</li>
+              <li>Uso IA (Claude Code) como parceira; as decisões e os testes ficam comigo.</li>
             </ul>
-            <p style="margin:20px 0 0"><span class="ver">Ver estudo de caso →</span></p>
           </div>
-        </a>
-
-        <div class="cards" style="margin-top:16px">
-          <article class="card">
-            <a class="card-img" href="projetos/loja-pet.html"><img src="img/loja-pet/produtos.webp" alt="Catálogo da loja online com fotos dos produtos" width="1600" height="1000" loading="lazy"></a>
-            <div class="card-corpo">
-              <h4><a href="projetos/loja-pet.html" class="link-titulo">Loja online + API</a></h4>
-              <p>Loja de rações, acessórios e medicações com painel e API REST para app. Regras de venda de medicamentos, dados pessoais criptografados e LGPD.</p>
-              <ul class="etiquetas"><li>Next.js</li><li>TypeScript</li><li>PostgreSQL</li><li>Drizzle</li></ul>
-              <a class="ver link-card" href="projetos/loja-pet.html">Ver estudo de caso →</a>
+          <div class="numeros">
+            <div class="numero"><b>1,5</b><span>Ano de experiência</span></div>
+            <div class="numero"><b>15+</b><span>Projetos concluídos</span></div>
+            <div class="numero"><b>25+</b><span>Tecnologias</span></div>
+            <div class="alem">
+              <span class="rotulo" style="margin:0">Além do código</span>
+              <ul>
+                <li>🎮 Games</li>
+                <li>🎧 Música</li>
+                <li>🏋️ Academia</li>
+              </ul>
             </div>
-          </article>
-          <article class="card">
-            <a class="card-img" href="projetos/estoque-pet.html"><img src="img/estoque-pet/inicio.webp" alt="Painel do controle de estoque com vendas do dia e saldo por local" width="1600" height="1000" loading="lazy"></a>
-            <div class="card-corpo">
-              <h4><a href="projetos/estoque-pet.html" class="link-titulo">Estoque, vendas e caixa</a></h4>
-              <p>Três saldos por produto que só mudam por movimentações, PDV com leitor de código de barras, fechamento de caixa e log de auditoria que ninguém apaga.</p>
-              <ul class="etiquetas"><li>NestJS</li><li>Next.js</li><li>PostgreSQL</li><li>PWA</li></ul>
-              <a class="ver link-card" href="projetos/estoque-pet.html">Ver estudo de caso →</a>
-            </div>
-          </article>
-          <article class="card">
-            <a class="card-img" href="projetos/agenda-pet.html"><img src="img/agenda-pet/agenda.webp" alt="Agenda compartilhada entre pet shop e banho e tosa" width="1600" height="1000" loading="lazy"></a>
-            <div class="card-corpo">
-              <h4><a href="projetos/agenda-pet.html" class="link-titulo">Agenda Pet</a></h4>
-              <p>Agenda compartilhada entre o pet shop e o banho e tosa, com tempo real, aviso no WhatsApp e permissões por setor. Foi a base do Banho e Tosa.</p>
-              <ul class="etiquetas"><li>JavaScript</li><li>Supabase</li><li>Realtime</li></ul>
-              <a class="ver link-card" href="projetos/agenda-pet.html">Ver estudo de caso →</a>
-            </div>
-          </article>
-          <article class="card">
-            <a class="card-img" href="projetos/estoque-clinica.html"><img src="img/estoque-clinica/relatorios.webp" alt="Relatório de perdas e sumiços por produto" width="1600" height="1000" loading="lazy"></a>
-            <div class="card-corpo">
-              <h4><a href="projetos/estoque-clinica.html" class="link-titulo">Estoque da clínica</a></h4>
-              <p>Versão só de estoque: o que vai para o consultório, o que é usado e o que se perde ou some na contagem, com o prejuízo em reais.</p>
-              <ul class="etiquetas"><li>NestJS</li><li>Next.js</li><li>PostgreSQL</li></ul>
-              <a class="ver link-card" href="projetos/estoque-clinica.html">Ver estudo de caso →</a>
-            </div>
-          </article>
-        </div>
-
-        <h3 class="materia">Comércio</h3>
-        <div class="cards">
-          <article class="card">
-            <a class="card-img" href="projetos/pdv-salgados.html"><img src="img/pdv-salgados/vender.webp" alt="Tela de venda do PDV com o pedido e o troco" width="1600" height="1000" loading="lazy"></a>
-            <div class="card-corpo">
-              <h4><a href="projetos/pdv-salgados.html" class="link-titulo">PDV Loja de Salgados</a></h4>
-              <p>Sistema de vendas desktop que funciona sem internet: vários pagamentos na mesma venda, estoque, caixa com sangria e fiado.</p>
-              <ul class="etiquetas"><li>Electron</li><li>React</li><li>SQLite</li></ul>
-              <a class="ver link-card" href="projetos/pdv-salgados.html">Ver estudo de caso →</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="etec" class="faixa">
-      <div class="conteiner">
-        <span class="rotulo">Formação técnica</span>
-        <h2>Etec Dr. Demétrio Azevedo Jr.</h2>
-        <p class="sub">Técnico em Desenvolvimento de Sistemas · projetos do 3º módulo, separados por matéria.</p>
-
-        <h3 class="materia">TCC</h3>
-        <a class="projeto" href="projetos/integra-jovem.html">
-          <div class="capa"><img src="img/etec/tcc-home.webp" alt="Página inicial do Integra Jovem" width="1440" height="900" loading="lazy"></div>
-          <div class="info">
-            <span class="grupo">Em grupo com Kauã Felipe e Victória Monike</span>
-            <h3>Integra Jovem</h3>
-            <p>Plataforma que prepara jovens para a vida adulta: trilhas curtas sobre dinheiro, carreira e bem-estar digital, jornada com níveis e conquistas, controle de gastos e glossário.</p>
-            <ul class="etiquetas" aria-label="Tecnologias">
-              <li>Next.js</li><li>React</li><li>TypeScript</li><li>Tailwind CSS</li><li>Supabase</li>
-            </ul>
-            <p style="margin:20px 0 0"><span class="ver">Ver projeto →</span></p>
           </div>
-        </a>
-
-        <h3 class="materia">Programação Web III</h3>
-        <div class="cards">
-          <article class="card">
-            <a class="card-img" href="projetos/midnight-racing.html"><img src="img/etec/midnight-login.webp" alt="Tela de entrada do Midnight Racing" width="1440" height="900" loading="lazy"></a>
-            <div class="card-corpo">
-              <span class="grupo">Em dupla com Frederick Ferreira</span>
-              <h4><a href="projetos/midnight-racing.html" class="link-titulo">Midnight Racing</a></h4>
-              <p>Login social com Google e Facebook, escolha de classe (Piloto ou Copiloto), ranking dos corredores e um jogo de corrida em primeira pessoa desenhado em canvas.</p>
-              <ul class="etiquetas"><li>Next.js</li><li>Auth.js</li><li>OAuth</li><li>Canvas 2D</li></ul>
-              <a class="ver link-card" href="projetos/midnight-racing.html">Ver telas →</a>
-            </div>
-          </article>
-          <article class="card">
-            <a class="card-img" href="projetos/veloce-motors.html"><img src="img/etec/veiculos-home.webp" alt="Página inicial da Veloce Motors com carrossel de destaques" width="1440" height="900" loading="lazy"></a>
-            <div class="card-corpo">
-              <h4><a href="projetos/veloce-motors.html" class="link-titulo">Veloce Motors</a></h4>
-              <p>Loja de carros seminovos com destaques em carrossel, filtro combinado, favoritos, simulador de financiamento (Tabela Price) e painel para cadastrar veículos.</p>
-              <ul class="etiquetas"><li>Next.js</li><li>TypeScript</li><li>Tailwind CSS</li></ul>
-              <a class="ver link-card" href="projetos/veloce-motors.html">Ver telas →</a>
-            </div>
-          </article>
-          <article class="card">
-            <a class="card-img" href="projetos/atlas-paises.html"><img src="img/etec/paises-lista.webp" alt="Atlas de países com as bandeiras em grade" width="1440" height="900" loading="lazy"></a>
-            <div class="card-corpo">
-              <h4><a href="projetos/atlas-paises.html" class="link-titulo">Atlas de países</a></h4>
-              <p>Os 254 países e territórios com bandeira, paginação e página de detalhes (capital, população, idiomas e moedas), consumindo a API REST Countries com cache diário.</p>
-              <ul class="etiquetas"><li>Next.js</li><li>API REST</li><li>Server Components</li></ul>
-              <a class="ver link-card" href="projetos/atlas-paises.html">Ver telas →</a>
-            </div>
-          </article>
-          <article class="card">
-            <a class="card-img" href="img/etec/cadastro-preenchido.webp" target="_blank" rel="noopener"><img src="img/etec/cadastro-validacao.webp" alt="Formulário de cadastro de clientes mostrando as mensagens de validação em vermelho" width="1040" height="650" loading="lazy"></a>
-            <div class="card-corpo">
-              <h4>Cadastro de clientes</h4>
-              <p>Formulário com validação campo a campo (nome, CPF com máscara, telefone, e-mail, CEP e endereço) e mensagens claras de erro antes de enviar.</p>
-              <ul class="etiquetas"><li>Next.js</li><li>React Hook Form</li><li>Zod</li><li>shadcn/ui</li></ul>
-            </div>
-          </article>
-        </div>
-
-        <h3 class="materia">Programação de Aplicativos Mobile II</h3>
-        <div class="cards">
-          <article class="card">
-            <a class="card-img celular" href="projetos/chat-da-sala.html"><img src="img/etec/chat-conversa.webp" alt="Conversa na Sala geral do chat, entre dois alunos" width="520" height="1125" loading="lazy"></a>
-            <div class="card-corpo">
-              <span class="grupo">Em dupla com Frederick Ferreira</span>
-              <h4><a href="projetos/chat-da-sala.html" class="link-titulo">Chat da Sala</a></h4>
-              <p>Chat em tempo real: grupos públicos e privados, fotos, áudio, arquivos, enquetes, confirmação de leitura, status online e reconexão automática com fila de envio.</p>
-              <ul class="etiquetas"><li>React Native</li><li>Expo</li><li>WebSocket</li><li>Node.js</li></ul>
-              <a class="ver link-card" href="projetos/chat-da-sala.html">Ver telas →</a>
-            </div>
-          </article>
-          <article class="card">
-            <a class="card-img celular" href="projetos/meus-feeds.html"><img src="img/etec/feeds-lista.webp" alt="Lista de postagens do app Meus Feeds" width="520" height="1125" loading="lazy"></a>
-            <div class="card-corpo">
-              <h4><a href="projetos/meus-feeds.html" class="link-titulo">Meus Feeds</a></h4>
-              <p>App que consome uma API REST: lista paginada de postagens, tela de detalhes, nova postagem e mensagens de erro claras quando não há conexão.</p>
-              <ul class="etiquetas"><li>React Native</li><li>Expo</li><li>API REST</li></ul>
-              <a class="ver link-card" href="projetos/meus-feeds.html">Ver telas →</a>
-            </div>
-          </article>
-          <article class="card sem-img">
-            <div class="card-corpo">
-              <h4>Calculadora acessível</h4>
-              <p>Lê as teclas e o resultado em voz alta e tem tema claro e escuro.</p>
-              <ul class="etiquetas"><li>React Native</li><li>TypeScript</li></ul>
-            </div>
-          </article>
-        </div>
-
-        <h3 class="materia">Desenvolvimento de Sistemas II</h3>
-        <div class="cards">
-          <article class="card">
-            <a class="card-img" href="img/etec/forca-jogo.webp" target="_blank" rel="noopener"><img src="img/etec/forca-jogo.webp" alt="Jogo da Forca com o boneco pendurado na forca durante uma partida" width="857" height="479" loading="lazy"></a>
-            <div class="card-corpo">
-              <h4>Jogo da Forca</h4>
-              <p>Palavras com dica lidas de um arquivo, cronômetro de 60 segundos, música de fundo e efeitos sonoros. O boneco aparece por partes a cada erro.</p>
-              <ul class="etiquetas"><li>C#</li><li>Windows Forms</li><li>NAudio</li></ul>
-            </div>
-          </article>
-          <article class="card">
-            <a class="card-img" href="img/etec/csharp-cep.webp" target="_blank" rel="noopener"><img src="img/etec/csharp-cep.webp" alt="Consulta de CEP preenchida com o endereço da Praça da Sé, em São Paulo" width="569" height="414" loading="lazy"></a>
-            <div class="card-corpo">
-              <h4>Consulta de CEP</h4>
-              <p>Digita o CEP e o app busca o endereço na API ViaCEP: logradouro, bairro, cidade, região, estado e DDD.</p>
-              <ul class="etiquetas"><li>C#</li><li>API REST</li><li>JSON</li></ul>
-            </div>
-          </article>
-          <article class="card">
-            <a class="card-img" href="img/etec/csharp-temperatura.webp" target="_blank" rel="noopener"><img src="img/etec/csharp-temperatura.webp" alt="Conversor mostrando 36 graus Celsius igual a 96,8 Fahrenheit" width="317" height="398" loading="lazy" style="object-fit:contain"></a>
-            <div class="card-corpo">
-              <h4>Conversor de temperatura</h4>
-              <p>Converte entre Celsius, Fahrenheit e Kelvin.</p>
-              <ul class="etiquetas"><li>C#</li><li>Windows Forms</li></ul>
-            </div>
-          </article>
-        </div>
-
-        <h3 class="materia">Redes (Internet e Protocolos)</h3>
-        <div class="cards">
-          <article class="card">
-            <a class="card-img branco" href="img/etec/redes-wan.webp" target="_blank" rel="noopener"><img src="img/etec/redes-wan.webp" alt="Topologia com dois roteadores ligados por link WAN, três switches e seis computadores" width="1140" height="650" loading="lazy" style="object-fit:contain"></a>
-            <div class="card-corpo">
-              <h4>Duas redes ligadas por WAN</h4>
-              <p>Dois roteadores ligados por link serial, cada um com suas redes locais, switches e computadores.</p>
-              <ul class="etiquetas"><li>Cisco Packet Tracer</li><li>Roteamento</li></ul>
-            </div>
-          </article>
-          <article class="card">
-            <a class="card-img branco" href="img/etec/redes-vlans.webp" target="_blank" rel="noopener"><img src="img/etec/redes-vlans.webp" alt="Topologia com quatro computadores, um switch de distribuição e um roteador para as VLANs" width="700" height="500" loading="lazy" style="object-fit:contain"></a>
-            <div class="card-corpo">
-              <h4>VLANs com roteador</h4>
-              <p>Computadores separados em VLANs num switch de distribuição, com um roteador fazendo a comunicação entre elas.</p>
-              <ul class="etiquetas"><li>Cisco Packet Tracer</li><li>VLAN</li></ul>
-            </div>
-          </article>
-          <article class="card">
-            <a class="card-img branco" href="img/etec/redes-roteadores.webp" target="_blank" rel="noopener"><img src="img/etec/redes-roteadores.webp" alt="Topologia com dois roteadores e quatro switches" width="1100" height="490" loading="lazy" style="object-fit:contain"></a>
-            <div class="card-corpo">
-              <h4>Rede com quatro switches</h4>
-              <p>Dois roteadores interligados atendendo quatro segmentos de rede. Uma das sete atividades práticas do semestre.</p>
-              <ul class="etiquetas"><li>Cisco Packet Tracer</li><li>Redes</li></ul>
-            </div>
-          </article>
         </div>
       </div>
     </section>
 
-    <section id="como-trabalho">
+    <section class="secao" id="competencias" data-secao="02 / 05 · Competências">
       <div class="conteiner">
-        <span class="rotulo">Como trabalho</span>
-        <h2>Do áudio no WhatsApp ao sistema publicado</h2>
-        <div class="grade" style="margin-top:28px">
-          <div class="bloco"><h3>1. Entender</h3><p>Converso com quem usa o sistema e vejo as planilhas e o jeito de trabalhar de hoje.</p></div>
-          <div class="bloco"><h3>2. Propor</h3><p>Explico a solução em palavras simples antes de escrever o código.</p></div>
-          <div class="bloco"><h3>3. Construir e testar</h3><p>Testes automatizados conferem as contas e as telas antes de cada entrega.</p></div>
-          <div class="bloco"><h3>4. Publicar e acompanhar</h3><p>As atualizações vão ao ar sozinhas, e as melhorias seguem conforme o uso.</p></div>
-        </div>
-        <p class="sub" style="margin-top:28px">Uso IA (Claude Code) como parceira de desenvolvimento para entregar mais rápido. As decisões, os testes e o contato com o cliente ficam comigo.</p>
+        <span class="rotulo">Tecnologias com que trabalho</span>
+        <h2>Competências</h2>
+        <div class="comp-grade" id="comp-grade"></div>
       </div>
     </section>
 
-    <section id="contato">
+    <section class="secao" id="experiencia" data-secao="03 / 05 · Experiência">
       <div class="conteiner">
-        <span class="rotulo">Contato</span>
-        <h2>Tem uma planilha que virou dor de cabeça?</h2>
-        <p class="sub">Me conte o problema e eu digo como dá para resolver.</p>
-        <div class="acoes">
-          <a class="botao primario" href="https://www.linkedin.com/in/thiago-proen%C3%A7a-3567a3385" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="botao" href="https://github.com/devthiagoferreira96-hue" target="_blank" rel="noopener">GitHub</a>
-          <a class="botao" href="mailto:dev.thiagoferreira96@gmail.com">E-mail</a>
+        <span class="rotulo">Experiência e formação</span>
+        <h2>Minha trajetória</h2>
+        <div class="linha-tempo">
+          <div class="etapa">
+            <h3>Desenvolvedor Full-Stack Freelancer</h3>
+            <p class="onde">Autônomo · 2025 – atual · Itapeva/SP</p>
+            <p>Desenvolvo sistemas sob medida para pequenos negócios, do levantamento com o cliente até a publicação. O sistema Caixa + Resina (gestão financeira e de produção de uma empresa de extração de resina) está em uso diário. Para um pet shop e clínica veterinária, fiz a agenda de banho e tosa com leva e traz e fechamento de caixa, o controle de estoque e vendas e a loja online com API.</p>
+            <ul class="etiquetas"><li>JavaScript</li><li>TypeScript</li><li>React</li><li>Next.js</li><li>NestJS</li><li>Supabase</li><li>PostgreSQL</li><li>PWA</li></ul>
+          </div>
+          <div class="etapa">
+            <h3>Técnico em Desenvolvimento de Sistemas</h3>
+            <p class="onde">Etec Dr. Demétrio Azevedo Jr. · Cursando (3º módulo) · 2026</p>
+            <p>Programação web e mobile, desenvolvimento de sistemas, banco de dados e redes. TCC em equipe: Integra Jovem, plataforma com trilhas de aprendizado, controle financeiro e o assistente IntegraChat.</p>
+            <ul class="etiquetas"><li>Next.js</li><li>React Native</li><li>C#</li><li>WebSocket</li><li>Cisco Packet Tracer</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao" id="projetos" data-secao="04 / 05 · Projetos">
+      <div class="conteiner">
+        <span class="rotulo">Alguns dos meus trabalhos</span>
+        <h2>Projetos</h2>
+
+        <div class="bloco-proj" data-carrossel="pessoais">
+          <div class="proj-topo">
+            <div>
+              <span class="rotulo">Feitos para clientes e por conta própria</span>
+              <h3>Projetos pessoais</h3>
+            </div>
+            <div class="setas">
+              <button class="seta" type="button" data-acao="voltar" aria-label="Projetos anteriores">←</button>
+              <button class="seta" type="button" data-acao="avancar" aria-label="Próximos projetos">→</button>
+              <button class="seta largo" type="button" data-acao="todos" aria-pressed="false">▦ Ver todos</button>
+            </div>
+          </div>
+          <div class="filtros" role="group" aria-label="Filtrar projetos pessoais"></div>
+          <div class="carrossel"></div>
+        </div>
+
+        <div class="bloco-proj" data-carrossel="etec">
+          <div class="proj-topo">
+            <div>
+              <span class="rotulo">Curso técnico · Etec Dr. Demétrio Azevedo Jr.</span>
+              <h3>Projetos da Etec</h3>
+            </div>
+            <div class="setas">
+              <button class="seta" type="button" data-acao="voltar" aria-label="Projetos anteriores">←</button>
+              <button class="seta" type="button" data-acao="avancar" aria-label="Próximos projetos">→</button>
+              <button class="seta largo" type="button" data-acao="todos" aria-pressed="false">▦ Ver todos</button>
+            </div>
+          </div>
+          <div class="filtros" role="group" aria-label="Filtrar projetos da Etec"></div>
+          <div class="carrossel"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao" id="contato" data-secao="05 / 05 · Contato">
+      <div class="conteiner">
+        <span class="rotulo">Entre em contato</span>
+        <h2>Vamos trabalhar juntos</h2>
+        <p class="sub">Tem uma planilha que virou dor de cabeça ou uma ideia de sistema? Me conte o problema e eu digo como dá para resolver.</p>
+        <div class="contatos">
+          <a class="contato-card" href="https://wa.me/5515998713047" target="_blank" rel="noopener"><span>WhatsApp</span><b>(15) 99871-3047</b></a>
+          <a class="contato-card" href="tel:+5515998713047"><span>Telefone</span><b>(15) 99871-3047</b></a>
+          <a class="contato-card" href="mailto:dev.thiagoferreira96@gmail.com"><span>E-mail</span><b>dev.thiagoferreira96@gmail.com</b></a>
+          <a class="contato-card" href="https://github.com/devthiagoferreira96-hue" target="_blank" rel="noopener"><span>GitHub</span><b>github.com/devthiagoferreira96-hue</b></a>
+          <a class="contato-card" href="https://www.linkedin.com/in/thiago-proen%C3%A7a-3567a3385" target="_blank" rel="noopener"><span>LinkedIn</span><b>linkedin.com/in/thiago-proença</b></a>
         </div>
       </div>
     </section>
@@ -301,9 +169,133 @@
 
   <footer class="rodape">
     <div class="conteiner">
-      <span>© 2026 Thiago Proença</span>
+      <span>© 2026 Thiago Proença — Desenvolvedor Júnior / Full-Stack</span>
       <span>Prints dos projetos com dados fictícios de demonstração.</span>
     </div>
   </footer>
+
+  <script>
+  // ------------------------------------------------------------ competências
+  const ICONE = (slug, cor) => `https://cdn.simpleicons.org/${slug}/${cor}`;
+  const COMPETENCIAS = [
+    { nome: 'Frontend', cor: '#38bdf8', itens: [['HTML5', 'html5', 'E34F26'], ['CSS3', 'css', '1572B6'], ['JavaScript', 'javascript', 'F7DF1E'], ['TypeScript', 'typescript', '3178C6'], ['React', 'react', '61DAFB'], ['Next.js', 'nextdotjs', 'ffffff'], ['Tailwind CSS', 'tailwindcss', '06B6D4']] },
+    { nome: 'Backend', cor: '#34d399', itens: [['Node.js', 'nodedotjs', '5FA04E'], ['NestJS', 'nestjs', 'E0234E'], ['APIs REST', null], ['WebSocket', null], ['Auth.js / OAuth', 'auth0', 'EB5424'], ['C#', null]] },
+    { nome: 'Banco de dados', cor: '#fbbf24', itens: [['PostgreSQL', 'postgresql', '4169E1'], ['Supabase', 'supabase', '3FCF8E'], ['SQLite', 'sqlite', '7FD3FF'], ['IndexedDB', null], ['Drizzle ORM', 'drizzle', 'C5F74F'], ['TypeORM', 'typeorm', 'FE0803']] },
+    { nome: 'Mobile e desktop', cor: '#f472b6', itens: [['React Native', 'react', '61DAFB'], ['Expo', 'expo', 'ffffff'], ['PWA', 'pwa', '5A0FC8'], ['Electron', 'electron', '47848F'], ['Windows Forms', null]] },
+    { nome: 'Ferramentas', cor: '#a78bfa', itens: [['Git', 'git', 'F05032'], ['GitHub', 'github', 'ffffff'], ['GitHub Actions', 'githubactions', '2088FF'], ['Docker', 'docker', '2496ED'], ['Playwright', null], ['Vercel', 'vercel', 'ffffff'], ['Vite', 'vite', '646CFF'], ['Claude Code', 'claude', 'D97757']] },
+    { nome: 'Redes', cor: '#fb923c', itens: [['Cisco Packet Tracer', 'cisco', '1BA0D7'], ['Roteamento', null], ['VLANs', null]] },
+  ];
+  document.getElementById('comp-grade').innerHTML = COMPETENCIAS.map((c) => `
+    <div class="comp" style="--cor:${c.cor}">
+      <h3>${c.nome}</h3>
+      <div class="selos">${c.itens.map(([n, slug, cor]) => `<span class="selo">${slug ? `<img src="${ICONE(slug, cor)}" alt="" width="13" height="13" loading="lazy" onerror="this.remove()">` : ''}${n}</span>`).join('')}</div>
+    </div>`).join('');
+
+  // ------------------------------------------------------------ projetos
+  const PROJETOS = {
+    pessoais: {
+      filtros: [['todos', 'Todos'], ['web', 'Aplicações web'], ['site', 'Sites'], ['desktop', 'Desktop']],
+      itens: [
+        { cat: 'web', tipo: 'Aplicação web · em uso', titulo: 'Caixa + Resina', img: 'img/caixa-resina/projecao.webp', url: 'projetos/caixa-resina.html',
+          texto: 'Gestão financeira e de produção para uma empresa de extração de resina: caixa, cartões, projeção de saldo entre meses, cargas, produtores e conta corrente.', tags: ['JavaScript', 'PWA', 'IndexedDB', 'Playwright'] },
+        { cat: 'web', tipo: 'Aplicação web', titulo: 'Banho e Tosa', img: 'img/banho-e-tosa/agenda.webp', url: 'projetos/banho-e-tosa.html',
+          texto: 'Agenda em tempo real, leva e traz com rota no Google Maps, cobrança por serviço e porte e fechamento de caixa do dia com histórico imutável.', tags: ['JavaScript', 'Supabase', 'PostgreSQL', 'PWA'] },
+        { cat: 'site', tipo: 'Loja online + API', titulo: 'Loja online Pet Shop', img: 'img/loja-pet/produtos.webp', url: 'projetos/loja-pet.html',
+          texto: 'Loja de rações, acessórios e medicações com painel administrativo e API REST para app, com dados pessoais criptografados e LGPD.', tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'Drizzle'] },
+        { cat: 'web', tipo: 'Aplicação web', titulo: 'Estoque, vendas e caixa', img: 'img/estoque-pet/inicio.webp', url: 'projetos/estoque-pet.html',
+          texto: 'Três saldos por produto, PDV com leitor de código de barras, fechamento de caixa e log de auditoria que nem o sistema consegue apagar.', tags: ['NestJS', 'Next.js', 'PostgreSQL', 'PWA'] },
+        { cat: 'web', tipo: 'Aplicação web', titulo: 'Agenda Pet', img: 'img/agenda-pet/agenda.webp', url: 'projetos/agenda-pet.html',
+          texto: 'Agenda compartilhada entre o pet shop e o banho e tosa, com tempo real, aviso no WhatsApp e permissões por setor.', tags: ['JavaScript', 'Supabase', 'Realtime'] },
+        { cat: 'web', tipo: 'Aplicação web', titulo: 'Estoque da clínica', img: 'img/estoque-clinica/relatorios.webp', url: 'projetos/estoque-clinica.html',
+          texto: 'O que vai para o consultório, o que é usado e o que se perde ou some na contagem, com o prejuízo em reais.', tags: ['NestJS', 'Next.js', 'PostgreSQL'] },
+        { cat: 'desktop', tipo: 'Aplicativo desktop', titulo: 'PDV Loja de Salgados', img: 'img/pdv-salgados/vender.webp', url: 'projetos/pdv-salgados.html',
+          texto: 'Sistema de vendas que funciona sem internet: vários pagamentos na mesma venda, estoque, caixa com sangria e fiado.', tags: ['Electron', 'React', 'SQLite'] },
+      ],
+    },
+    etec: {
+      filtros: [['todos', 'Todos'], ['tcc', 'TCC'], ['web', 'Programação Web'], ['mobile', 'Mobile'], ['desktop', 'Desktop (C#)'], ['redes', 'Redes']],
+      itens: [
+        { cat: 'tcc', tipo: 'TCC · em equipe', titulo: 'Integra Jovem', img: 'img/etec/tcc-chat-meta.webp', url: 'projetos/integra-jovem.html',
+          texto: 'Plataforma que prepara jovens para a vida adulta: trilhas, jornada com níveis, controle de gastos e o IntegraChat, que calcula o andamento das metas.', tags: ['Next.js', 'TypeScript', 'Supabase'] },
+        { cat: 'web', tipo: 'Programação Web III · em dupla', titulo: 'Midnight Racing', img: 'img/etec/mid-mundo-vulcao.webp', url: 'projetos/midnight-racing.html',
+          texto: 'Login social com Google e Facebook, ranking e um jogo de corrida em canvas com portal para quatro mundos e modo copiloto.', tags: ['Next.js', 'Auth.js', 'Canvas 2D'] },
+        { cat: 'web', tipo: 'Programação Web III', titulo: 'Veloce Motors', img: 'img/etec/veiculos-home.webp', url: 'projetos/veloce-motors.html',
+          texto: 'Loja de seminovos com carrossel, filtro combinado, favoritos, simulador de financiamento (Tabela Price) e painel de estoque.', tags: ['Next.js', 'TypeScript', 'Tailwind CSS'] },
+        { cat: 'web', tipo: 'Programação Web III', titulo: 'Atlas de países', img: 'img/etec/paises-lista.webp', url: 'projetos/atlas-paises.html',
+          texto: 'Os 254 países e territórios com bandeira, paginação e detalhes, consumindo a API REST Countries com cache diário.', tags: ['Next.js', 'API REST', 'Server Components'] },
+        { cat: 'web', tipo: 'Programação Web', titulo: 'Cadastro de clientes', img: 'img/etec/cadastro-validacao.webp', url: 'img/etec/cadastro-preenchido.webp',
+          texto: 'Formulário com validação campo a campo (nome, CPF, telefone, e-mail, CEP e endereço) e mensagens claras de erro.', tags: ['Next.js', 'React Hook Form', 'Zod'] },
+        { cat: 'mobile', tipo: 'Mobile II · em dupla', titulo: 'Chat da Sala', img: 'img/etec/chat-enquete.webp', url: 'projetos/chat-da-sala.html',
+          texto: 'Chat em tempo real com grupos, enquetes, reações, confirmação de leitura, status e reconexão automática com fila de envio.', tags: ['React Native', 'Expo', 'WebSocket'] },
+        { cat: 'mobile', tipo: 'Mobile II', titulo: 'Meus Feeds', img: 'img/etec/feeds-lista.webp', url: 'projetos/meus-feeds.html',
+          texto: 'App que consome uma API REST: lista paginada, detalhes, nova postagem e mensagens claras quando não há conexão.', tags: ['React Native', 'Expo', 'API REST'] },
+        { cat: 'desktop', tipo: 'Desenvolvimento de Sistemas II', titulo: 'Jogo da Forca', img: 'img/etec/forca-jogo.webp', url: 'img/etec/forca-jogo.webp',
+          texto: 'Palavras com dica lidas de arquivo, cronômetro, música e efeitos sonoros; o boneco aparece por partes a cada erro.', tags: ['C#', 'Windows Forms', 'NAudio'] },
+        { cat: 'desktop', tipo: 'Desenvolvimento de Sistemas II', titulo: 'Consulta de CEP', img: 'img/etec/csharp-cep.webp', url: 'img/etec/csharp-cep.webp',
+          texto: 'Digita o CEP e o app busca o endereço na API ViaCEP: logradouro, bairro, cidade, estado e DDD.', tags: ['C#', 'API REST', 'JSON'] },
+        { cat: 'redes', tipo: 'Redes', titulo: 'Duas redes ligadas por WAN', img: 'img/etec/redes-wan.webp', url: 'img/etec/redes-wan.webp',
+          texto: 'Dois roteadores ligados por link serial, cada um com as suas redes locais, switches e computadores.', tags: ['Cisco Packet Tracer', 'Roteamento'] },
+        { cat: 'redes', tipo: 'Redes', titulo: 'VLANs com roteador', img: 'img/etec/redes-vlans.webp', url: 'img/etec/redes-vlans.webp',
+          texto: 'Computadores separados em VLANs num switch, com um roteador fazendo a comunicação entre elas.', tags: ['Cisco Packet Tracer', 'VLAN'] },
+      ],
+    },
+  };
+
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  document.querySelectorAll('[data-carrossel]').forEach((bloco) => {
+    const dados = PROJETOS[bloco.dataset.carrossel];
+    const pista = bloco.querySelector('.carrossel');
+    const filtros = bloco.querySelector('.filtros');
+    filtros.innerHTML = dados.filtros.map(([id, nome], i) => `<button class="filtro" type="button" data-filtro="${id}" aria-pressed="${i === 0}">${nome}</button>`).join('');
+    pista.innerHTML = dados.itens.map((p) => {
+      const pagina = p.url.endsWith('.html');
+      return `<a class="pcard" data-cat="${p.cat}" href="${p.url}"${pagina ? '' : ' target="_blank" rel="noopener"'}>
+        <div class="thumb"><img src="${p.img}" alt="" width="1600" height="1000" loading="lazy"></div>
+        <div class="corpo">
+          <span class="tipo">${esc(p.tipo)}</span>
+          <h4>${esc(p.titulo)}</h4>
+          <p>${esc(p.texto)}</p>
+          <ul class="etiquetas">${p.tags.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>
+          <span class="ver">${pagina ? 'Ver detalhes ↗' : 'Ver imagem ↗'}</span>
+        </div>
+      </a>`;
+    }).join('');
+
+    filtros.addEventListener('click', (e) => {
+      const b = e.target.closest('[data-filtro]');
+      if (!b) return;
+      filtros.querySelectorAll('[data-filtro]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+      pista.querySelectorAll('.pcard').forEach((c) => { c.hidden = b.dataset.filtro !== 'todos' && c.dataset.cat !== b.dataset.filtro; });
+      pista.scrollTo({ left: 0 });
+    });
+    const passo = () => (pista.querySelector('.pcard:not([hidden])')?.offsetWidth || 280) + 14;
+    bloco.querySelector('[data-acao="voltar"]').addEventListener('click', () => pista.scrollBy({ left: -passo() * 2, behavior: 'smooth' }));
+    bloco.querySelector('[data-acao="avancar"]').addEventListener('click', () => pista.scrollBy({ left: passo() * 2, behavior: 'smooth' }));
+    const todos = bloco.querySelector('[data-acao="todos"]');
+    todos.addEventListener('click', () => {
+      const ativo = pista.classList.toggle('todos');
+      todos.setAttribute('aria-pressed', String(ativo));
+      todos.textContent = ativo ? '▤ Carrossel' : '▦ Ver todos';
+    });
+  });
+
+  // ------------------------------------------------------------ seção atual no topo + ponto na linha
+  const rotulo = document.getElementById('secao-atual');
+  const ponto = document.getElementById('ponto');
+  const links = document.querySelectorAll('.menu a');
+  const secoes = [...document.querySelectorAll('[data-secao]')];
+  const principal = document.querySelector('main');
+  function atualizar() {
+    const meio = window.scrollY + window.innerHeight * 0.35;
+    let atual = null;
+    for (const s of secoes) if (s.offsetTop <= meio) atual = s;
+    rotulo.textContent = atual ? ' ' + atual.dataset.secao : ' — Desenvolvedor Full-Stack';
+    links.forEach((a) => a.classList.toggle('ativo', !!atual && a.getAttribute('href') === '#' + atual.id));
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    ponto.style.top = Math.round((window.scrollY / Math.max(1, total)) * (principal.offsetHeight - 20)) + 'px';
+  }
+  window.addEventListener('scroll', atualizar, { passive: true });
+  atualizar();
+  </script>
 </body>
 </html>
