@@ -278,6 +278,27 @@
       todos.setAttribute('aria-pressed', String(ativo));
       todos.textContent = ativo ? '▤ Carrossel' : '▦ Ver todos';
     });
+
+    // anda sozinho: um card a cada 3 s; para com o mouse em cima, com foco do teclado ou toque,
+    // no modo "Ver todos", fora da tela e para quem pediu menos movimento no sistema
+    const poucoMovimento = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let mouseEmCima = false, focoDentro = false, tocando = false, visivel = false;
+    const pausado = () => mouseEmCima || focoDentro || tocando || !visivel || document.hidden
+      || pista.classList.contains('todos') || poucoMovimento.matches;
+    setInterval(() => {
+      if (pausado()) return;
+      const fim = pista.scrollLeft + pista.clientWidth >= pista.scrollWidth - 8;
+      if (fim) pista.scrollTo({ left: 0, behavior: 'smooth' });
+      else pista.scrollBy({ left: passo(), behavior: 'smooth' });
+    }, 3000);
+    bloco.addEventListener('mouseenter', () => { mouseEmCima = true; });
+    bloco.addEventListener('mouseleave', () => { mouseEmCima = false; });
+    bloco.addEventListener('focusin', () => { focoDentro = true; });
+    bloco.addEventListener('focusout', (e) => { if (!bloco.contains(e.relatedTarget)) focoDentro = false; });
+    let soltar;
+    pista.addEventListener('touchstart', () => { tocando = true; clearTimeout(soltar); }, { passive: true });
+    pista.addEventListener('touchend', () => { soltar = setTimeout(() => { tocando = false; }, 4000); }, { passive: true });
+    new IntersectionObserver(([e]) => { visivel = e.isIntersecting; }, { threshold: 0.3 }).observe(pista);
   });
 
   // ------------------------------------------------------------ seção atual no topo + ponto na linha
