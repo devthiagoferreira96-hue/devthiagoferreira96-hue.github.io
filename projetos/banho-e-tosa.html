@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Banho e Tosa · Thiago Proença</title>
+  <meta name="description" content="Estudo de caso: agenda em tempo real, leva e traz com rota no Google Maps e fechamento de caixa para um banho e tosa.">
+  <meta property="og:title" content="Banho e Tosa · Estudo de caso">
+  <meta property="og:image" content="../img/banho-e-tosa/agenda.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="conteiner">
+      <a class="marca" href="../">Thiago<span>.</span></a>
+      <nav class="menu" aria-label="Seções">
+        <a href="../#projetos">Pessoais</a>
+        <a href="../#etec">Etec</a>
+        <a href="../#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="conteiner">
+      <div class="caso-cabeca">
+        <a class="voltar" href="../#projetos">← Todos os projetos</a>
+        <span class="rotulo" style="display:block">Estudo de caso</span>
+        <h1>Banho e Tosa</h1>
+        <p class="sub">Agenda, leva e traz e caixa para um banho e tosa, usados no balcão e no celular de quem busca e entrega os pets.</p>
+        <dl class="fatos">
+          <div><dt>Tipo</dt><dd>Sistema web sob medida</dd></div>
+          <div><dt>Meu papel</dt><dd>Análise, desenvolvimento, testes e publicação</dd></div>
+          <div><dt>Plataforma</dt><dd>Web (PWA), celular e computador</dd></div>
+          <div><dt>Banco</dt><dd>Supabase (PostgreSQL)</dd></div>
+        </dl>
+      </div>
+
+      <figure>
+        <img src="../img/banho-e-tosa/agenda.webp" alt="Agenda do dia com os pets em cada etapa, alerta de alergia e endereço do leva e traz" width="1600" height="1000">
+        <figcaption>Agenda do dia: cada pet com a sua etapa, alerta de saúde em destaque e o endereço do leva e traz.</figcaption>
+      </figure>
+      <div class="texto">
+        <h2>O problema</h2>
+        <p>A agenda ficava num caderno e no WhatsApp. Dois pets marcados no mesmo horário, tutor sem saber que o banho tinha terminado, rota de busca feita de cabeça e um caixa que só era conferido no fim do mês.</p>
+        <h2>A solução</h2>
+        <ul>
+        <li><strong>Agenda em tempo real</strong> entre os aparelhos, com a etapa de cada pet: agendado, em banho, finalizado e entregue.</li>
+        <li><strong>Trava de horário no banco:</strong> se duas pessoas salvam o mesmo horário ao mesmo tempo, o banco aceita a primeira e a tela da outra mostra quem ocupou.</li>
+        <li><strong>Leva e traz</strong> com endereço pelo CEP e rota de várias paradas no Google Maps.</li>
+        <li><strong>Caixa do dia</strong> com tabela de preços por serviço e porte, despesas, sangrias e fechamento.</li>
+        </ul>
+      </div>
+      <figure>
+        <img src="../img/banho-e-tosa/leva-e-traz.webp" alt="Painel do leva e traz com as buscas em ordem e botões para Google Maps e Waze" width="1600" height="1000" loading="lazy">
+        <figcaption>Leva e traz: ordem das buscas, rota no Google Maps ou no Waze e o que já está pronto para entregar.</figcaption>
+      </figure>
+      <div class="texto">
+        <h2>Destaque: fechamento do caixa</h2>
+        <p>O sistema não deixa fechar o dia com pendências: pet ainda em banho, atendimento sem valor ou sem forma de pagamento. Depois de fechado, o dia não muda mais. Só a administradora reabre, com motivo, e tudo fica no histórico.</p>
+        <div class="destaque-caixa"><p><strong>Na prática:</strong> o faturamento, o ticket médio e o dinheiro que deve estar na gaveta são calculados por funções no próprio banco (PostgreSQL), então a tela, a planilha e o fechamento sempre mostram o mesmo número.</p></div>
+      </div>
+      <figure>
+        <img src="../img/banho-e-tosa/caixa-dia-fechado.webp" alt="Caixa de um dia fechado com faturamento, formas de pagamento e serviços" width="1600" height="1000" loading="lazy">
+        <figcaption>Dia fechado: quem fechou, o dinheiro conferido na gaveta e os totais por forma de pagamento e por serviço.</figcaption>
+      </figure>
+      <figure>
+        <img src="../img/banho-e-tosa/caixa-mes.webp" alt="Resumo do mês com comparação com o mês anterior" width="1600" height="1000" loading="lazy">
+        <figcaption>Mês: soma dos dias, comparação com o mês anterior e os dias que ainda faltam fechar.</figcaption>
+      </figure>
+      <figure>
+        <img src="../img/banho-e-tosa/graficos.webp" alt="Gráfico de colunas com animais registrados e finalizados por dia" width="1600" height="1000" loading="lazy">
+        <figcaption>Gráficos de atendimentos, por serviço e de faturamento.</figcaption>
+      </figure>
+      <figure>
+        <img src="../img/banho-e-tosa/historico.webp" alt="Histórico com cada alteração, quem fez e os valores antes e depois" width="1600" height="1000" loading="lazy">
+        <figcaption>Histórico imutável: quem criou, alterou, cancelou ou mudou um valor, e quando.</figcaption>
+      </figure>
+      <div class="texto">
+        <h2>Decisões técnicas</h2>
+        <ul>
+        <li><strong>JavaScript puro</strong>, sem framework: carrega rápido em computador antigo e no celular.</li>
+        <li><strong>Regras no banco:</strong> triggers e Row Level Security garantem trava de horário, valor obrigatório para finalizar, dia fechado e permissões por papel, mesmo que alguém tente pela API.</li>
+        <li><strong>Supabase Realtime</strong> atualiza a agenda nos outros aparelhos na hora.</li>
+        <li><strong>Edge Function</strong> em TypeScript para avisar o tutor no WhatsApp quando o pet fica pronto.</li>
+        <li><strong>LGPD:</strong> script para apagar os dados de um cliente a pedido.</li>
+        </ul>
+      </div>
+      <h2 style="margin-top:48px">No celular</h2>
+      <div class="celulares">
+        <figure><img src="../img/banho-e-tosa/cel-agenda.webp" alt="Agenda no celular" width="640" height="1385" loading="lazy"></figure>
+        <figure><img src="../img/banho-e-tosa/cel-passeio.webp" alt="Aba Passeio com a rota do leva e traz" width="640" height="1385" loading="lazy"></figure>
+        <figure><img src="../img/banho-e-tosa/cel-caixa.webp" alt="Caixa do dia no celular" width="640" height="1385" loading="lazy"></figure>
+      </div>
+      <div class="texto">
+        <h2>Tecnologias</h2>
+        <p>JavaScript, HTML e CSS, Supabase (PostgreSQL, Auth, Realtime, RLS e Edge Functions), Chart.js, Service Worker (PWA) e Vercel.</p>
+      </div>
+
+      <section style="padding:48px 0 72px">
+        <div class="acoes" style="margin:0">
+          <a class="botao primario" href="https://github.com/devthiagoferreira96-hue/banho-e-tosa" target="_blank" rel="noopener">Ver código no GitHub</a>
+          <a class="botao" href="../#projetos">Voltar aos projetos</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="conteiner">
+      <span>© 2026 Thiago Proença</span>
+      <span>Prints com dados fictícios de demonstração.</span>
+    </div>
+  </footer>
+</body>
+</html>

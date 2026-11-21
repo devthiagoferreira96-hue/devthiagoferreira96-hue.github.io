@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estoque da clínica · Thiago Proença</title>
+  <meta name="description" content="Estudo de caso: controle só de estoque para clínica veterinária, com inventário e auditoria.">
+  <meta property="og:title" content="Estoque da clínica · Estudo de caso">
+  <meta property="og:image" content="../img/estoque-clinica/inicio.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="conteiner">
+      <a class="marca" href="../">Thiago<span>.</span></a>
+      <nav class="menu" aria-label="Seções">
+        <a href="../#projetos">Pessoais</a>
+        <a href="../#etec">Etec</a>
+        <a href="../#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="conteiner">
+      <div class="caso-cabeca">
+        <a class="voltar" href="../#projetos">← Todos os projetos</a>
+        <span class="rotulo" style="display:block">Estudo de caso</span>
+        <h1>Estoque da clínica</h1>
+        <p class="sub">Versão enxuta do sistema de estoque, só com o estoque geral e a clínica: o que entra, o que a clínica usa e o que se perde ou some.</p>
+        <dl class="fatos">
+          <div><dt>Tipo</dt><dd>Sistema web (API + painel)</dd></div>
+          <div><dt>Meu papel</dt><dd>Análise, desenvolvimento e testes</dd></div>
+          <div><dt>Plataforma</dt><dd>Web (PWA), celular e computador</dd></div>
+          <div><dt>Banco</dt><dd>PostgreSQL (Supabase)</dd></div>
+        </dl>
+      </div>
+
+      <figure>
+        <img src="../img/estoque-clinica/inicio.webp" alt="Painel com entradas, transferências, usos e perdas do dia" width="1600" height="1000">
+        <figcaption>Início: movimentos do dia e o valor parado em cada local.</figcaption>
+      </figure>
+      <div class="texto">
+        <h2>Por que uma versão só de estoque</h2>
+        <p>Nem toda clínica precisa de PDV e caixa. Esta versão tira vendas, preços de venda e caixa e foca no que mais gera prejuízo: insumo e medicamento que somem entre o depósito e o consultório.</p>
+        <ul>
+        <li><strong>Enviado à clínica × usado na clínica:</strong> se muita coisa vai para o consultório e pouco uso é registrado, o relatório mostra.</li>
+        <li><strong>Perdas</strong> (vencido, avariado) e <strong>sumiços</strong> (diferença na contagem) separados, com valor em reais.</li>
+        </ul>
+      </div>
+      <figure>
+        <img src="../img/estoque-clinica/relatorios.webp" alt="Relatório com entradas, enviado à clínica, usado, perdas e sumiços por produto" width="1600" height="1000" loading="lazy">
+        <figcaption>Relatório: entrou, foi para a clínica, foi usado, perdido ou sumiu, com o prejuízo de cada produto.</figcaption>
+      </figure>
+      <figure>
+        <img src="../img/estoque-clinica/movimentacoes.webp" alt="Log de auditoria com perdas e usos na clínica" width="1600" height="1000" loading="lazy">
+        <figcaption>Log de auditoria com responsável e motivo de cada movimento.</figcaption>
+      </figure>
+      <figure>
+        <img src="../img/estoque-clinica/produtos.webp" alt="Produtos com o saldo do estoque geral e da clínica" width="1600" height="1000" loading="lazy">
+        <figcaption>Produtos com o saldo de cada local.</figcaption>
+      </figure>
+      <h2 style="margin-top:48px">No celular</h2>
+      <div class="celulares">
+        <figure><img src="../img/estoque-clinica/cel-inicio.webp" alt="Início no celular" width="640" height="1385" loading="lazy"></figure>
+        <figure><img src="../img/estoque-clinica/cel-movimentacoes.webp" alt="Log no celular" width="640" height="1385" loading="lazy"></figure>
+        <figure><img src="../img/estoque-clinica/cel-produtos.webp" alt="Produtos no celular" width="640" height="1385" loading="lazy"></figure>
+      </div>
+      <div class="texto">
+        <h2>Tecnologias</h2>
+        <p>NestJS, TypeORM, PostgreSQL (Supabase), Next.js 15, React, Tailwind CSS e PWA.</p>
+      </div>
+
+      <section style="padding:48px 0 72px">
+        <div class="acoes" style="margin:0">
+          <a class="botao primario" href="https://github.com/devthiagoferreira96-hue/estoque-clinica-pet" target="_blank" rel="noopener">Ver código no GitHub</a>
+          <a class="botao" href="../#projetos">Voltar aos projetos</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="conteiner">
+      <span>© 2026 Thiago Proença</span>
+      <span>Prints com dados fictícios de demonstração.</span>
+    </div>
+  </footer>
+</body>
+</html>

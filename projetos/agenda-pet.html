@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agenda Pet · Thiago Proença</title>
+  <meta name="description" content="Estudo de caso: agenda compartilhada entre o pet shop e o banho e tosa, com tempo real e leva e traz.">
+  <meta property="og:title" content="Agenda Pet · Estudo de caso">
+  <meta property="og:image" content="../img/agenda-pet/agenda.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="conteiner">
+      <a class="marca" href="../">Thiago<span>.</span></a>
+      <nav class="menu" aria-label="Seções">
+        <a href="../#projetos">Pessoais</a>
+        <a href="../#etec">Etec</a>
+        <a href="../#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="conteiner">
+      <div class="caso-cabeca">
+        <a class="voltar" href="../#projetos">← Todos os projetos</a>
+        <span class="rotulo" style="display:block">Estudo de caso</span>
+        <h1>Agenda Pet</h1>
+        <p class="sub">Agenda compartilhada entre o pet shop e o banho e tosa de uma clínica veterinária. Foi a primeira versão, que depois virou o Banho e Tosa.</p>
+        <dl class="fatos">
+          <div><dt>Tipo</dt><dd>Sistema web sob medida</dd></div>
+          <div><dt>Meu papel</dt><dd>Análise, desenvolvimento e testes</dd></div>
+          <div><dt>Plataforma</dt><dd>Web (PWA), celular e computador</dd></div>
+          <div><dt>Banco</dt><dd>Supabase (PostgreSQL)</dd></div>
+        </dl>
+      </div>
+
+      <figure>
+        <img src="../img/agenda-pet/agenda.webp" alt="Agenda do dia com etiquetas de quem agendou, etapa e alerta de saúde" width="1600" height="1000">
+        <figcaption>Agenda do dia: quem agendou (pet shop ou banho e tosa), a etapa de cada pet e o alerta de saúde.</figcaption>
+      </figure>
+      <div class="texto">
+        <h2>O problema</h2>
+        <p>O balcão do pet shop e o banho e tosa marcavam horários em lugares diferentes. Resultado: horário duplicado, tutor ligando para saber se o pet estava pronto e ninguém sabendo quem tinha agendado o quê.</p>
+        <h2>A solução</h2>
+        <ul>
+        <li><strong>Uma agenda só</strong> para os dois setores, atualizada em tempo real.</li>
+        <li><strong>Cada setor com o seu login</strong> e permissões no banco (Row Level Security).</li>
+        <li><strong>Aviso no WhatsApp</strong> quando o banho termina.</li>
+        <li><strong>Leva e traz</strong> com rota no Google Maps e aba Passeio no celular.</li>
+        </ul>
+      </div>
+      <figure>
+        <img src="../img/agenda-pet/semana.webp" alt="Visão da semana com os pets de cada dia" width="1600" height="1000" loading="lazy">
+        <figcaption>Visão da semana, com alerta de saúde em cada pet.</figcaption>
+      </figure>
+      <figure>
+        <img src="../img/agenda-pet/graficos.webp" alt="Gráfico de entradas por dia separado entre pet shop e banho e tosa" width="1600" height="1000" loading="lazy">
+        <figcaption>Gráficos de entradas por setor: registrados e finalizados.</figcaption>
+      </figure>
+      <figure>
+        <img src="../img/agenda-pet/historico.webp" alt="Histórico de alterações" width="1600" height="1000" loading="lazy">
+        <figcaption>Histórico de tudo o que foi criado, alterado ou cancelado.</figcaption>
+      </figure>
+      <h2 style="margin-top:48px">No celular</h2>
+      <div class="celulares">
+        <figure><img src="../img/agenda-pet/cel-agenda.webp" alt="Agenda no celular" width="640" height="1385" loading="lazy"></figure>
+        <figure><img src="../img/agenda-pet/cel-passeio.webp" alt="Aba Passeio no celular" width="640" height="1385" loading="lazy"></figure>
+        <figure><img src="../img/agenda-pet/cel-graficos.webp" alt="Gráficos no celular" width="640" height="1385" loading="lazy"></figure>
+      </div>
+      <div class="texto">
+        <h2>Tecnologias</h2>
+        <p>JavaScript, HTML e CSS, Supabase (PostgreSQL, Auth, Realtime, RLS e Edge Functions), Chart.js e Service Worker (PWA).</p>
+      </div>
+
+      <section style="padding:48px 0 72px">
+        <div class="acoes" style="margin:0">
+          <a class="botao primario" href="https://github.com/devthiagoferreira96-hue/agenda-pet" target="_blank" rel="noopener">Ver código no GitHub</a>
+          <a class="botao" href="../#projetos">Voltar aos projetos</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="conteiner">
+      <span>© 2026 Thiago Proença</span>
+      <span>Prints com dados fictícios de demonstração.</span>
+    </div>
+  </footer>
+</body>
+</html>

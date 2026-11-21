@@ -18,8 +18,8 @@
     <div class="conteiner">
       <a class="marca" href="./">Thiago<span>.</span></a>
       <nav class="menu" aria-label="Seções">
-        <a href="#projetos">Projetos</a>
-        <a href="#como-trabalho" class="opcional">Como trabalho</a>
+        <a href="#projetos">Pessoais</a>
+        <a href="#etec">Etec</a>
         <a href="#contato">Contato</a>
       </nav>
     </div>
@@ -30,19 +30,19 @@
       <div class="conteiner">
         <span class="rotulo">Desenvolvedor web</span>
         <h1>Sistemas que resolvem o <em>dia a dia</em> de pequenos negócios.</h1>
-        <p class="sub">Sou o Thiago. Transformo planilhas e processos manuais em sistemas web simples de usar, no celular e no computador, feitos sob medida para quem vai usar.</p>
+        <p class="sub">Sou o Thiago, estudante do Técnico em Desenvolvimento de Sistemas na Etec Dr. Demétrio Azevedo Jr. Transformo planilhas e processos manuais em sistemas web e aplicativos simples de usar, feitos sob medida para quem vai usar.</p>
         <div class="acoes">
-          <a class="botao primario" href="#projetos">Ver projetos</a>
-          <a class="botao" href="#contato">Falar comigo</a>
+          <a class="botao primario" href="#projetos">Projetos pessoais</a>
+          <a class="botao" href="#etec">Projetos da Etec</a>
         </div>
       </div>
     </section>
 
     <section id="projetos">
       <div class="conteiner">
-        <span class="rotulo">Projetos</span>
-        <h2>Em uso de verdade</h2>
-        <p class="sub" style="margin-bottom:32px">Cada projeto começou com um problema real de um cliente.</p>
+        <span class="rotulo">Projetos pessoais</span>
+        <h2>Fora da sala de aula</h2>
+        <p class="sub" style="margin-bottom:32px">Projetos que desenvolvi por conta própria, alguns já em uso de verdade.</p>
 
         <a class="projeto" href="projetos/caixa-resina.html">
           <div class="capa"><img src="img/caixa-resina/projecao.webp" alt="Tela do Extrato com a projeção do caixa do mês seguinte" width="1600" height="1000" loading="lazy"></div>
@@ -55,6 +55,209 @@
             <p style="margin:20px 0 0"><span class="ver">Ver estudo de caso →</span></p>
           </div>
         </a>
+
+        <h3 class="materia">Pet shop e clínica veterinária</h3>
+        <a class="projeto" href="projetos/banho-e-tosa.html">
+          <div class="capa"><img src="img/banho-e-tosa/agenda.webp" alt="Agenda do Banho e Tosa com os pets do dia em cada etapa" width="1600" height="1000" loading="lazy"></div>
+          <div class="info">
+            <h3>Banho e Tosa</h3>
+            <p>Agenda em tempo real com trava de horário no banco, leva e traz com rota de várias paradas no Google Maps, cobrança por serviço e porte e fechamento de caixa do dia com histórico imutável.</p>
+            <ul class="etiquetas" aria-label="Tecnologias">
+              <li>JavaScript</li><li>Supabase</li><li>PostgreSQL</li><li>PWA</li><li>Google Maps</li>
+            </ul>
+            <p style="margin:20px 0 0"><span class="ver">Ver estudo de caso →</span></p>
+          </div>
+        </a>
+
+        <div class="cards" style="margin-top:16px">
+          <article class="card">
+            <a class="card-img" href="projetos/loja-pet.html"><img src="img/loja-pet/produtos.webp" alt="Catálogo da loja online com fotos dos produtos" width="1600" height="1000" loading="lazy"></a>
+            <div class="card-corpo">
+              <h4><a href="projetos/loja-pet.html" class="link-titulo">Loja online + API</a></h4>
+              <p>Loja de rações, acessórios e medicações com painel e API REST para app. Regras de venda de medicamentos, dados pessoais criptografados e LGPD.</p>
+              <ul class="etiquetas"><li>Next.js</li><li>TypeScript</li><li>PostgreSQL</li><li>Drizzle</li></ul>
+              <a class="ver link-card" href="projetos/loja-pet.html">Ver estudo de caso →</a>
+            </div>
+          </article>
+          <article class="card">
+            <a class="card-img" href="projetos/estoque-pet.html"><img src="img/estoque-pet/inicio.webp" alt="Painel do controle de estoque com vendas do dia e saldo por local" width="1600" height="1000" loading="lazy"></a>
+            <div class="card-corpo">
+              <h4><a href="projetos/estoque-pet.html" class="link-titulo">Estoque, vendas e caixa</a></h4>
+              <p>Três saldos por produto que só mudam por movimentações, PDV com leitor de código de barras, fechamento de caixa e log de auditoria que ninguém apaga.</p>
+              <ul class="etiquetas"><li>NestJS</li><li>Next.js</li><li>PostgreSQL</li><li>PWA</li></ul>
+              <a class="ver link-card" href="projetos/estoque-pet.html">Ver estudo de caso →</a>
+            </div>
+          </article>
+          <article class="card">
+            <a class="card-img" href="projetos/agenda-pet.html"><img src="img/agenda-pet/agenda.webp" alt="Agenda compartilhada entre pet shop e banho e tosa" width="1600" height="1000" loading="lazy"></a>
+            <div class="card-corpo">
+              <h4><a href="projetos/agenda-pet.html" class="link-titulo">Agenda Pet</a></h4>
+              <p>Agenda compartilhada entre o pet shop e o banho e tosa, com tempo real, aviso no WhatsApp e permissões por setor. Foi a base do Banho e Tosa.</p>
+              <ul class="etiquetas"><li>JavaScript</li><li>Supabase</li><li>Realtime</li></ul>
+              <a class="ver link-card" href="projetos/agenda-pet.html">Ver estudo de caso →</a>
+            </div>
+          </article>
+          <article class="card">
+            <a class="card-img" href="projetos/estoque-clinica.html"><img src="img/estoque-clinica/relatorios.webp" alt="Relatório de perdas e sumiços por produto" width="1600" height="1000" loading="lazy"></a>
+            <div class="card-corpo">
+              <h4><a href="projetos/estoque-clinica.html" class="link-titulo">Estoque da clínica</a></h4>
+              <p>Versão só de estoque: o que vai para o consultório, o que é usado e o que se perde ou some na contagem, com o prejuízo em reais.</p>
+              <ul class="etiquetas"><li>NestJS</li><li>Next.js</li><li>PostgreSQL</li></ul>
+              <a class="ver link-card" href="projetos/estoque-clinica.html">Ver estudo de caso →</a>
+            </div>
+          </article>
+        </div>
+
+        <h3 class="materia">Comércio</h3>
+        <div class="cards">
+          <article class="card">
+            <a class="card-img" href="projetos/pdv-salgados.html"><img src="img/pdv-salgados/vender.webp" alt="Tela de venda do PDV com o pedido e o troco" width="1600" height="1000" loading="lazy"></a>
+            <div class="card-corpo">
+              <h4><a href="projetos/pdv-salgados.html" class="link-titulo">PDV Loja de Salgados</a></h4>
+              <p>Sistema de vendas desktop que funciona sem internet: vários pagamentos na mesma venda, estoque, caixa com sangria e fiado.</p>
+              <ul class="etiquetas"><li>Electron</li><li>React</li><li>SQLite</li></ul>
+              <a class="ver link-card" href="projetos/pdv-salgados.html">Ver estudo de caso →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="etec" class="faixa">
+      <div class="conteiner">
+        <span class="rotulo">Formação técnica</span>
+        <h2>Etec Dr. Demétrio Azevedo Jr.</h2>
+        <p class="sub">Técnico em Desenvolvimento de Sistemas · projetos do 3º módulo, separados por matéria.</p>
+
+        <h3 class="materia">TCC</h3>
+        <a class="projeto" href="projetos/integra-jovem.html">
+          <div class="capa"><img src="img/etec/tcc-home.webp" alt="Página inicial do Integra Jovem" width="1440" height="900" loading="lazy"></div>
+          <div class="info">
+            <span class="grupo">Em grupo com Kauã Felipe e Victória Monike</span>
+            <h3>Integra Jovem</h3>
+            <p>Plataforma que prepara jovens para a vida adulta: trilhas curtas sobre dinheiro, carreira e bem-estar digital, jornada com níveis e conquistas, controle de gastos e glossário.</p>
+            <ul class="etiquetas" aria-label="Tecnologias">
+              <li>Next.js</li><li>React</li><li>TypeScript</li><li>Tailwind CSS</li><li>Supabase</li>
+            </ul>
+            <p style="margin:20px 0 0"><span class="ver">Ver projeto →</span></p>
+          </div>
+        </a>
+
+        <h3 class="materia">Programação Web III</h3>
+        <div class="cards">
+          <article class="card">
+            <a class="card-img" href="img/etec/midnight-login.webp" target="_blank" rel="noopener"><img src="img/etec/midnight-login.webp" alt="Tela de entrada do Midnight Racing" width="1440" height="900" loading="lazy"></a>
+            <div class="card-corpo">
+              <span class="grupo">Em dupla com Frederick Ferreira</span>
+              <h4>Midnight Racing</h4>
+              <p>Login social com Google e Facebook, escolha de classe (Piloto ou Copiloto), ranking dos corredores e um jogo de corrida em primeira pessoa desenhado em canvas.</p>
+              <ul class="etiquetas"><li>Next.js</li><li>Auth.js</li><li>OAuth</li><li>Canvas 2D</li></ul>
+            </div>
+          </article>
+          <article class="card">
+            <a class="card-img" href="img/etec/veiculos-detalhe.webp" target="_blank" rel="noopener"><img src="img/etec/veiculos-home.webp" alt="Página inicial da Veloce Motors com carrossel de destaques" width="1440" height="900" loading="lazy"></a>
+            <div class="card-corpo">
+              <h4>Veloce Motors</h4>
+              <p>Loja de carros seminovos com destaques em carrossel, filtro combinado, favoritos, simulador de financiamento (Tabela Price) e painel para cadastrar veículos.</p>
+              <ul class="etiquetas"><li>Next.js</li><li>TypeScript</li><li>Tailwind CSS</li></ul>
+            </div>
+          </article>
+          <article class="card">
+            <a class="card-img" href="img/etec/paises-brasil.webp" target="_blank" rel="noopener"><img src="img/etec/paises-lista.webp" alt="Atlas de países com as bandeiras em grade" width="1440" height="900" loading="lazy"></a>
+            <div class="card-corpo">
+              <h4>Atlas de países</h4>
+              <p>Os 254 países e territórios com bandeira, paginação e página de detalhes (capital, população, idiomas e moedas), consumindo a API REST Countries com cache diário.</p>
+              <ul class="etiquetas"><li>Next.js</li><li>API REST</li><li>Server Components</li></ul>
+            </div>
+          </article>
+        </div>
+
+        <h3 class="materia">Programação de Aplicativos Mobile II</h3>
+        <div class="cards">
+          <article class="card">
+            <a class="card-img celular" href="img/etec/chat-conversa.webp" target="_blank" rel="noopener"><img src="img/etec/chat-conversa.webp" alt="Conversa na Sala geral do chat, entre dois alunos" width="520" height="1125" loading="lazy"></a>
+            <div class="card-corpo">
+              <span class="grupo">Em dupla com Frederick Ferreira</span>
+              <h4>Chat da Sala</h4>
+              <p>Chat em tempo real: grupos públicos e privados, fotos, áudio, arquivos, enquetes, confirmação de leitura, status online e reconexão automática com fila de envio.</p>
+              <ul class="etiquetas"><li>React Native</li><li>Expo</li><li>WebSocket</li><li>Node.js</li></ul>
+            </div>
+          </article>
+          <article class="card">
+            <a class="card-img celular" href="img/etec/feeds-lista.webp" target="_blank" rel="noopener"><img src="img/etec/feeds-lista.webp" alt="Lista de postagens do app Meus Feeds" width="520" height="1125" loading="lazy"></a>
+            <div class="card-corpo">
+              <h4>Meus Feeds</h4>
+              <p>App que consome uma API REST: lista paginada de postagens, tela de detalhes, nova postagem e mensagens de erro claras quando não há conexão.</p>
+              <ul class="etiquetas"><li>React Native</li><li>Expo</li><li>API REST</li></ul>
+            </div>
+          </article>
+          <article class="card sem-img">
+            <div class="card-corpo">
+              <h4>Outros exercícios</h4>
+              <ul class="lista-simples">
+                <li><strong>Calculadora acessível</strong>: lê as teclas e o resultado em voz alta e tem tema claro e escuro.</li>
+                <li><strong>Cadastro de clientes</strong>: formulário e navegação entre telas com Expo Router.</li>
+              </ul>
+              <ul class="etiquetas"><li>React Native</li><li>TypeScript</li></ul>
+            </div>
+          </article>
+        </div>
+
+        <h3 class="materia">Desenvolvimento de Sistemas II</h3>
+        <div class="cards">
+          <article class="card">
+            <a class="card-img" href="img/etec/forca-jogo.webp" target="_blank" rel="noopener"><img src="img/etec/forca-jogo.webp" alt="Jogo da Forca com o boneco pendurado na forca durante uma partida" width="857" height="479" loading="lazy"></a>
+            <div class="card-corpo">
+              <h4>Jogo da Forca</h4>
+              <p>Palavras com dica lidas de um arquivo, cronômetro de 60 segundos, música de fundo e efeitos sonoros. O boneco aparece por partes a cada erro.</p>
+              <ul class="etiquetas"><li>C#</li><li>Windows Forms</li><li>NAudio</li></ul>
+            </div>
+          </article>
+          <article class="card">
+            <a class="card-img" href="img/etec/csharp-cep.webp" target="_blank" rel="noopener"><img src="img/etec/csharp-cep.webp" alt="Consulta de CEP preenchida com o endereço da Praça da Sé, em São Paulo" width="569" height="414" loading="lazy"></a>
+            <div class="card-corpo">
+              <h4>Consulta de CEP</h4>
+              <p>Digita o CEP e o app busca o endereço na API ViaCEP: logradouro, bairro, cidade, região, estado e DDD.</p>
+              <ul class="etiquetas"><li>C#</li><li>API REST</li><li>JSON</li></ul>
+            </div>
+          </article>
+          <article class="card">
+            <a class="card-img" href="img/etec/csharp-temperatura.webp" target="_blank" rel="noopener"><img src="img/etec/csharp-temperatura.webp" alt="Conversor mostrando 36 graus Celsius igual a 96,8 Fahrenheit" width="317" height="398" loading="lazy" style="object-fit:contain"></a>
+            <div class="card-corpo">
+              <h4>Conversor de temperatura</h4>
+              <p>Converte entre Celsius, Fahrenheit e Kelvin.</p>
+              <ul class="etiquetas"><li>C#</li><li>Windows Forms</li></ul>
+            </div>
+          </article>
+        </div>
+
+        <h3 class="materia">Redes (Internet e Protocolos)</h3>
+        <div class="cards">
+          <article class="card">
+            <a class="card-img branco" href="img/etec/redes-wan.webp" target="_blank" rel="noopener"><img src="img/etec/redes-wan.webp" alt="Topologia com dois roteadores ligados por link WAN, três switches e seis computadores" width="1140" height="650" loading="lazy" style="object-fit:contain"></a>
+            <div class="card-corpo">
+              <h4>Duas redes ligadas por WAN</h4>
+              <p>Dois roteadores ligados por link serial, cada um com suas redes locais, switches e computadores.</p>
+              <ul class="etiquetas"><li>Cisco Packet Tracer</li><li>Roteamento</li></ul>
+            </div>
+          </article>
+          <article class="card">
+            <a class="card-img branco" href="img/etec/redes-vlans.webp" target="_blank" rel="noopener"><img src="img/etec/redes-vlans.webp" alt="Topologia com quatro computadores, um switch de distribuição e um roteador para as VLANs" width="700" height="500" loading="lazy" style="object-fit:contain"></a>
+            <div class="card-corpo">
+              <h4>VLANs com roteador</h4>
+              <p>Computadores separados em VLANs num switch de distribuição, com um roteador fazendo a comunicação entre elas.</p>
+              <ul class="etiquetas"><li>Cisco Packet Tracer</li><li>VLAN</li></ul>
+            </div>
+          </article>
+          <article class="card">
+            <a class="card-img branco" href="img/etec/redes-roteadores.webp" target="_blank" rel="noopener"><img src="img/etec/redes-roteadores.webp" alt="Topologia com dois roteadores e quatro switches" width="1100" height="490" loading="lazy" style="object-fit:contain"></a>
+            <div class="card-corpo">
+              <h4>Rede com quatro switches</h4>
+              <p>Dois roteadores interligados atendendo quatro segmentos de rede. Uma das sete atividades práticas do semestre.</p>
+              <ul class="etiquetas"><li>Cisco Packet Tracer</li><li>Redes</li></ul>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 

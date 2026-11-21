@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PDV Loja de Salgados · Thiago Proença</title>
+  <meta name="description" content="Estudo de caso: sistema de vendas desktop que funciona sem internet para uma loja de salgados e produtos orientais.">
+  <meta property="og:title" content="PDV Loja de Salgados · Estudo de caso">
+  <meta property="og:image" content="../img/pdv-salgados/vender.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="conteiner">
+      <a class="marca" href="../">Thiago<span>.</span></a>
+      <nav class="menu" aria-label="Seções">
+        <a href="../#projetos">Pessoais</a>
+        <a href="../#etec">Etec</a>
+        <a href="../#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="conteiner">
+      <div class="caso-cabeca">
+        <a class="voltar" href="../#projetos">← Todos os projetos</a>
+        <span class="rotulo" style="display:block">Estudo de caso</span>
+        <h1>PDV Loja de Salgados</h1>
+        <p class="sub">Sistema de vendas para uma loja pequena de salgados e produtos orientais, feito para substituir o caderno de pedidos. Funciona sem internet.</p>
+        <dl class="fatos">
+          <div><dt>Tipo</dt><dd>Aplicativo desktop (Windows)</dd></div>
+          <div><dt>Meu papel</dt><dd>Análise, desenvolvimento e testes</dd></div>
+          <div><dt>Plataforma</dt><dd>Computador do balcão</dd></div>
+          <div><dt>Banco</dt><dd>SQLite no próprio computador</dd></div>
+        </dl>
+      </div>
+
+      <figure>
+        <img src="../img/pdv-salgados/vender.webp" alt="Tela de venda com os produtos em cartões e o pedido com total e troco" width="1600" height="1000">
+        <figcaption>Vender: botões grandes, pedido ao lado e troco calculado na hora.</figcaption>
+      </figure>
+      <div class="texto">
+        <h2>O problema</h2>
+        <p>A loja anotava pedidos e vendas num caderno. No fim do dia, ninguém sabia quanto tinha vendido em Pix ou em dinheiro, quanto cada cliente devia no fiado nem o que estava acabando.</p>
+        <h2>A solução</h2>
+        <ul>
+        <li><strong>Telas simples</strong> para quem atende no balcão, com atalhos de teclado (F2 para buscar, F9 para finalizar).</li>
+        <li><strong>Várias formas de pagamento</strong> na mesma venda, inclusive fiado.</li>
+        <li><strong>Caixa</strong> com abertura, sangria, suprimento e fechamento conferido.</li>
+        <li><strong>Estoque</strong> com alerta de produto acabando.</li>
+        </ul>
+      </div>
+      <figure>
+        <img src="../img/pdv-salgados/inicio.webp" alt="Painel do dia com vendido, ticket médio, mais vendidos e estoque baixo" width="1600" height="1000" loading="lazy">
+        <figcaption>Início: vendido hoje, mais vendidos e estoque baixo.</figcaption>
+      </figure>
+      <figure>
+        <img src="../img/pdv-salgados/caixa.webp" alt="Caixa aberto com vendas por forma de pagamento e conta do dinheiro" width="1600" height="1000" loading="lazy">
+        <figcaption>Caixa: quanto deve ter na gaveta e o histórico dos caixas anteriores.</figcaption>
+      </figure>
+      <figure>
+        <img src="../img/pdv-salgados/vendas.webp" alt="Relatório de vendas dos últimos 30 dias" width="1600" height="1000" loading="lazy">
+        <figcaption>Vendas e relatórios dos últimos 30 dias.</figcaption>
+      </figure>
+      <figure>
+        <img src="../img/pdv-salgados/fiado.webp" alt="Lista de clientes do fiado com o saldo de cada um" width="1600" height="1000" loading="lazy">
+        <figcaption>Fiado: quanto cada cliente deve.</figcaption>
+      </figure>
+      <div class="texto">
+        <h2>Decisões técnicas</h2>
+        <ul>
+        <li><strong>Dinheiro sempre em centavos</strong> (número inteiro), no banco e na API, para não ter erro de arredondamento.</li>
+        <li><strong>O preço vem do banco</strong>, nunca da tela.</li>
+        <li><strong>SQLite via WebAssembly</strong> (sql.js), gravado em arquivo a cada transação com arquivo temporário e troca de nome, para não corromper se a energia cair.</li>
+        <li><strong>Senha do gerente</strong> (scrypt) para cancelar venda e fechar o caixa.</li>
+        <li><strong>Testes</strong> das regras de negócio com banco em memória.</li>
+        </ul>
+        <h2>Tecnologias</h2>
+        <p>Electron, React 19, Vite, SQLite (sql.js), lucide-react e electron-builder.</p>
+      </div>
+
+      <section style="padding:48px 0 72px">
+        <div class="acoes" style="margin:0">
+          <a class="botao primario" href="https://github.com/devthiagoferreira96-hue/pdv-loja-salgados" target="_blank" rel="noopener">Ver código no GitHub</a>
+          <a class="botao" href="../#projetos">Voltar aos projetos</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="conteiner">
+      <span>© 2026 Thiago Proença</span>
+      <span>Prints com dados fictícios de demonstração.</span>
+    </div>
+  </footer>
+</body>
+</html>

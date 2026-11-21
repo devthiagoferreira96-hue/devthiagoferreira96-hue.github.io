@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estoque, vendas e caixa · Thiago Proença</title>
+  <meta name="description" content="Estudo de caso: controle de estoque, PDV e caixa para clínica veterinária e pet shop, com log de auditoria imutável.">
+  <meta property="og:title" content="Estoque, vendas e caixa · Estudo de caso">
+  <meta property="og:image" content="../img/estoque-pet/inicio.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="conteiner">
+      <a class="marca" href="../">Thiago<span>.</span></a>
+      <nav class="menu" aria-label="Seções">
+        <a href="../#projetos">Pessoais</a>
+        <a href="../#etec">Etec</a>
+        <a href="../#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="conteiner">
+      <div class="caso-cabeca">
+        <a class="voltar" href="../#projetos">← Todos os projetos</a>
+        <span class="rotulo" style="display:block">Estudo de caso</span>
+        <h1>Estoque, vendas e caixa</h1>
+        <p class="sub">Controle de estoque, vendas e caixa para uma clínica veterinária com pet shop, feito para descobrir para onde a mercadoria estava indo.</p>
+        <dl class="fatos">
+          <div><dt>Tipo</dt><dd>Sistema web (API + painel)</dd></div>
+          <div><dt>Meu papel</dt><dd>Análise, desenvolvimento e testes</dd></div>
+          <div><dt>Plataforma</dt><dd>Web (PWA), celular e computador</dd></div>
+          <div><dt>Banco</dt><dd>PostgreSQL (Supabase)</dd></div>
+        </dl>
+      </div>
+
+      <figure>
+        <img src="../img/estoque-pet/inicio.webp" alt="Painel inicial com vendas do dia e o saldo em cada local" width="1600" height="1000">
+        <figcaption>Início: vendas e lucro do dia e onde está a mercadoria (estoque geral, clínica e loja).</figcaption>
+      </figure>
+      <div class="texto">
+        <h2>O problema</h2>
+        <p>Produto sumia e ninguém sabia se tinha sido vendido, usado num atendimento ou perdido. O estoque era um número só, editado à mão.</p>
+        <h2>A solução</h2>
+        <ul>
+        <li><strong>Três saldos por produto</strong> (estoque geral, clínica e loja) que só mudam por movimentações: entrada, transferência, venda, uso na clínica, perda e contagem.</li>
+        <li><strong>Contagem de inventário:</strong> a pessoa digita o que contou e a diferença vira um registro de sumiço, com responsável.</li>
+        <li><strong>PDV</strong> com leitor de código de barras e limite de desconto para funcionário.</li>
+        </ul>
+      </div>
+      <figure>
+        <img src="../img/estoque-pet/movimentacoes.webp" alt="Log de auditoria com data, produto, tipo, local, quantidade, responsável e motivo" width="1600" height="1000" loading="lazy">
+        <figcaption>Log de auditoria: tudo o que entrou, mudou de lugar, foi vendido ou saiu, com responsável e motivo.</figcaption>
+      </figure>
+      <div class="texto">
+        <h2>Destaque: log que ninguém apaga</h2>
+        <div class="destaque-caixa"><p>Um <strong>trigger no PostgreSQL</strong> bloqueia qualquer <code>UPDATE</code>, <code>DELETE</code> ou <code>TRUNCATE</code> na tabela de movimentações. Nem o próprio sistema consegue apagar o histórico, e é isso que torna o relatório de perdas confiável.</p></div>
+      </div>
+      <figure>
+        <img src="../img/estoque-pet/pdv.webp" alt="Tela de nova venda com quatro produtos, desconto e forma de pagamento" width="1600" height="1000" loading="lazy">
+        <figcaption>Nova venda: busca por nome ou código de barras, desconto com motivo e lucro da venda.</figcaption>
+      </figure>
+      <figure>
+        <img src="../img/estoque-pet/produtos.webp" alt="Produtos com o saldo em cada local e botões de entrada, mover, saída e contar" width="1600" height="1000" loading="lazy">
+        <figcaption>Produtos: saldo em cada local e as ações que geram movimentação.</figcaption>
+      </figure>
+      <figure>
+        <img src="../img/estoque-pet/caixa.webp" alt="Fechamento de caixa do dia por forma de pagamento" width="1600" height="1000" loading="lazy">
+        <figcaption>Fechamento de caixa: totais por forma de pagamento, descontos e lucro líquido.</figcaption>
+      </figure>
+      <figure>
+        <img src="../img/estoque-pet/relatorios.webp" alt="Relatório de lucratividade por categoria e por produto" width="1600" height="1000" loading="lazy">
+        <figcaption>Relatórios de lucratividade e de perdas e sumiços.</figcaption>
+      </figure>
+      <div class="texto">
+        <h2>Decisões técnicas</h2>
+        <ul>
+        <li><strong>API REST em NestJS</strong> com TypeORM, JWT e papéis (administrador e funcionário).</li>
+        <li><strong>Regras no servidor:</strong> o banco impede saldo negativo, o desconto é rateado entre os itens e só o administrador cancela venda.</li>
+        <li><strong>Frontend em Next.js</strong> com Tailwind, instalável como aplicativo (PWA).</li>
+        </ul>
+      </div>
+      <h2 style="margin-top:48px">No celular</h2>
+      <div class="celulares">
+        <figure><img src="../img/estoque-pet/cel-inicio.webp" alt="Início no celular" width="640" height="1385" loading="lazy"></figure>
+        <figure><img src="../img/estoque-pet/cel-movimentacoes.webp" alt="Log de auditoria no celular" width="640" height="1385" loading="lazy"></figure>
+      </div>
+      <div class="texto">
+        <h2>Tecnologias</h2>
+        <p>NestJS, TypeORM, PostgreSQL (Supabase), Next.js 15, React, Tailwind CSS e PWA.</p>
+      </div>
+
+      <section style="padding:48px 0 72px">
+        <div class="acoes" style="margin:0">
+          <a class="botao primario" href="https://github.com/devthiagoferreira96-hue/controle-estoque-pet" target="_blank" rel="noopener">Ver código no GitHub</a>
+          <a class="botao" href="../#projetos">Voltar aos projetos</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="conteiner">
+      <span>© 2026 Thiago Proença</span>
+      <span>Prints com dados fictícios de demonstração.</span>
+    </div>
+  </footer>
+</body>
+</html>

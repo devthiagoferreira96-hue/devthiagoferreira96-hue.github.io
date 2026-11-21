@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loja online + API · Thiago Proença</title>
+  <meta name="description" content="Estudo de caso: loja online de pet shop com painel administrativo e API REST para app, com foco em segurança e LGPD.">
+  <meta property="og:title" content="Loja online + API · Estudo de caso">
+  <meta property="og:image" content="../img/loja-pet/home.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="conteiner">
+      <a class="marca" href="../">Thiago<span>.</span></a>
+      <nav class="menu" aria-label="Seções">
+        <a href="../#projetos">Pessoais</a>
+        <a href="../#etec">Etec</a>
+        <a href="../#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="conteiner">
+      <div class="caso-cabeca">
+        <a class="voltar" href="../#projetos">← Todos os projetos</a>
+        <span class="rotulo" style="display:block">Estudo de caso</span>
+        <h1>Loja online + API</h1>
+        <p class="sub">Loja de rações, acessórios e medicações com retirada na loja ou entrega, painel administrativo e uma API pronta para um aplicativo.</p>
+        <dl class="fatos">
+          <div><dt>Tipo</dt><dd>Loja online e API</dd></div>
+          <div><dt>Meu papel</dt><dd>Desenvolvimento, testes e documentação</dd></div>
+          <div><dt>Plataforma</dt><dd>Web, com API para app</dd></div>
+          <div><dt>Banco</dt><dd>PostgreSQL (Drizzle ORM)</dd></div>
+        </dl>
+      </div>
+
+      <figure>
+        <img src="../img/loja-pet/home.webp" alt="Página inicial da loja com foto de um cachorro e um gato" width="1600" height="1000">
+        <figcaption>Página inicial.</figcaption>
+      </figure>
+      <div class="texto">
+        <h2>O desafio</h2>
+        <p>Vender medicamento veterinário pela internet tem regras: alguns só com receita na loja, controlados nunca podem aparecer. Além disso, a loja guarda dados pessoais (nome, telefone, CPF, endereço), então precisava estar de acordo com a LGPD e o Código de Defesa do Consumidor.</p>
+        <h2>A solução</h2>
+        <ul>
+        <li><strong>Mesmas regras para o site e para o app:</strong> o preço sempre vem do banco, o estoque é conferido de novo ao confirmar e medicamento com receita não entra no carrinho.</li>
+        <li><strong>Dados pessoais criptografados</strong> no banco, com CPF mascarado no painel.</li>
+        <li><strong>Painel</strong> para pedidos, produtos, estoque, mensagens e pedidos de titulares (LGPD).</li>
+        </ul>
+      </div>
+      <figure>
+        <img src="../img/loja-pet/produtos.webp" alt="Catálogo com filtros por categoria e por pet" width="1600" height="1000" loading="lazy">
+        <figcaption>Catálogo com filtros por categoria e por pet. Medicamento com receita aparece como venda presencial.</figcaption>
+      </figure>
+      <figure>
+        <img src="../img/loja-pet/produto.webp" alt="Página do produto com preço, estoque e botão de adicionar ao carrinho" width="1600" height="1000" loading="lazy">
+        <figcaption>Página do produto.</figcaption>
+      </figure>
+      <figure>
+        <img src="../img/loja-pet/carrinho.webp" alt="Carrinho com dois itens e opção de pedir pelo WhatsApp" width="1600" height="1000" loading="lazy">
+        <figcaption>Carrinho: finalizar pelo site ou pedir pelo WhatsApp.</figcaption>
+      </figure>
+      <figure>
+        <img src="../img/loja-pet/admin-pedidos.webp" alt="Lista de pedidos no painel administrativo com a situação de cada um" width="1600" height="1000" loading="lazy">
+        <figcaption>Painel: pedidos com canal (site ou app), forma de recebimento e situação.</figcaption>
+      </figure>
+      <figure>
+        <img src="../img/loja-pet/admin-pedido.webp" alt="Detalhe de um pedido com dados do cliente e CPF mascarado" width="1600" height="1000" loading="lazy">
+        <figcaption>Detalhe do pedido, com o CPF mascarado e o registro do aceite dos termos.</figcaption>
+      </figure>
+      <div class="texto">
+        <h2>Decisões técnicas</h2>
+        <ul>
+        <li><strong>Next.js 15</strong> com Server Components: as páginas da loja chamam os serviços direto no servidor.</li>
+        <li><strong>Autenticação própria:</strong> cookie <code>HttpOnly</code> no site e token de 15 minutos com renovação no app, com detecção de reuso.</li>
+        <li><strong>Segurança:</strong> CSP com nonce, proteção CSRF, limite de envios, papéis separados no banco e logs que não podem ser apagados.</li>
+        <li><strong>Validação com Zod</strong> e testes das regras de negócio e da API.</li>
+        </ul>
+      </div>
+      <h2 style="margin-top:48px">No celular</h2>
+      <div class="celulares">
+        <figure><img src="../img/loja-pet/cel-home.webp" alt="Página inicial no celular" width="640" height="1385" loading="lazy"></figure>
+        <figure><img src="../img/loja-pet/cel-produtos.webp" alt="Catálogo no celular" width="640" height="1385" loading="lazy"></figure>
+        <figure><img src="../img/loja-pet/cel-produto.webp" alt="Produto no celular" width="640" height="1385" loading="lazy"></figure>
+      </div>
+      <div class="texto">
+        <h2>Tecnologias</h2>
+        <p>Next.js 15, React 19, TypeScript, PostgreSQL, Drizzle ORM, Zod, Motion e Docker.</p>
+      </div>
+
+      <section style="padding:48px 0 72px">
+        <div class="acoes" style="margin:0">
+          <a class="botao primario" href="https://github.com/devthiagoferreira96-hue/site-pet-shop" target="_blank" rel="noopener">Ver código no GitHub</a>
+          <a class="botao" href="../#projetos">Voltar aos projetos</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="conteiner">
+      <span>© 2026 Thiago Proença</span>
+      <span>Prints com dados fictícios de demonstração.</span>
+    </div>
+  </footer>
+</body>
+</html>
