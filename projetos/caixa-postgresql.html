@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Caixa + Resina com PostgreSQL · Thiago Proença</title>
-  <meta name="description" content="Estudo de caso: o sistema Caixa + Resina ganhou uma API REST em Node.js e um banco PostgreSQL, com login seguro e vários usuários.">
-  <meta property="og:title" content="Caixa + Resina com PostgreSQL · Estudo de caso">
+  <title>Caixa + Resina · Thiago Proença</title>
+  <meta name="description" content="Estudo de caso: sistema de gestão financeira e de produção para uma empresa de extração de resina, com API REST em Node.js e banco PostgreSQL.">
+  <meta property="og:title" content="Caixa + Resina · Estudo de caso">
   <meta property="og:image" content="../img/caixa-postgresql/inicio.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,10 +31,10 @@
       <div class="caso-cabeca">
         <a class="voltar" href="../#projetos">← Todos os projetos</a>
         <span class="rotulo" style="display:block">Estudo de caso</span>
-        <h1>Caixa + Resina com PostgreSQL</h1>
-        <p class="sub">O mesmo sistema do <a href="caixa-resina.html">Caixa + Resina</a>, agora com back-end: uma API REST em Node.js guardando tudo num banco PostgreSQL, com login no servidor e vários usuários.</p>
+        <h1>Caixa + Resina</h1>
+        <p class="sub">Gestão financeira e de produção para uma empresa de extração de resina, com uma API REST em Node.js guardando tudo num banco PostgreSQL, login no servidor e vários usuários.</p>
         <dl class="fatos">
-          <div><dt>Tipo</dt><dd>API REST + banco de dados</dd></div>
+          <div><dt>Tipo</dt><dd>Aplicação web + API REST</dd></div>
           <div><dt>Meu papel</dt><dd>Arquitetura, banco, API, segurança e testes</dd></div>
           <div><dt>Plataforma</dt><dd>Node.js, PostgreSQL e web (PWA)</dd></div>
           <div><dt>Código</dt><dd><a href="https://github.com/devthiagoferreira96-hue/caixa-resina-postgresql">GitHub</a></dd></div>
@@ -44,13 +44,17 @@
 
       <figure>
         <img src="../img/caixa-postgresql/inicio.webp" alt="Tela inicial com o saldo total, o saldo de cada conta, as faturas do mês e os gastos por categoria, carregados do PostgreSQL" width="1600" height="1000">
-        <figcaption>As mesmas telas de antes, agora com os dados vindo do PostgreSQL.</figcaption>
+        <figcaption>Início: saldo de cada conta, faturas do mês e gastos por categoria, tudo vindo do PostgreSQL.</figcaption>
       </figure>
 
       <div class="texto">
-        <h2>Por que fazer uma versão com servidor</h2>
-        <p>A versão original funciona 100% offline: os dados ficam criptografados no próprio aparelho. Isso é ótimo para a cliente, mas tem limites. Não dá para usar a mesma conta no celular e no computador, e cada aparelho é uma ilha. Nesta versão, os dados vão para um banco PostgreSQL de verdade, e a pessoa entra com usuário e senha de qualquer lugar.</p>
-        <p>O sistema da empresa continua como está. Esta é uma cópia separada, com dados fictícios, feita para mostrar o mesmo produto com outra arquitetura.</p>
+        <h2>O sistema</h2>
+        <p>Nasceu para uma empresa de extração de resina que controlava tudo em planilhas separadas: o caixa da casa, o da fazenda, as cargas, a conta corrente de cada produtor e os insumos. Juntei tudo num sistema só, com duas partes que se conversam:</p>
+        <ul>
+          <li><strong>Caixa:</strong> contas, cartões de crédito com faturas, lançamentos que se repetem todo mês, projeção do saldo entre meses e relatórios por categoria.</li>
+          <li><strong>Produção de resina:</strong> cargas, produtores, arrendamento, insumos e a conta corrente de cada produtor, com exportação em Excel e PDF.</li>
+        </ul>
+        <p>A primeira versão guardava os dados criptografados no próprio aparelho, sem servidor. Isso tinha limites: não dava para usar a mesma conta no celular e no computador. Nesta versão os dados vão para um banco PostgreSQL, e a pessoa entra com usuário e senha de qualquer lugar. A versão publicada usa só dados fictícios.</p>
 
         <h2>A troca foi feita numa camada só</h2>
         <p>Desde o começo, todas as telas leem e gravam dados por um único arquivo, no mesmo formato do Supabase: <code>from('lancamentos').select().eq().order()</code>. Para trocar o banco, substituí só essa camada. Ela passou a mandar a consulta para a API, que valida, monta o SQL com parâmetros e executa no PostgreSQL. As telas do caixa e da resina não precisaram ser reescritas.</p>
@@ -105,8 +109,8 @@
         <h2>Testes</h2>
         <ul>
           <li><strong>15 testes da API</strong> rodando num PostgreSQL de verdade, em memória (PGlite): login, limite de tentativas, recuperação de senha, filtros, <code>RESTRICT</code>, <code>CASCADE</code> e <code>SET NULL</code>, isolamento entre usuários, tentativas de SQL injection e backup quebrado.</li>
-          <li><strong>350 checagens de navegador</strong> com Playwright, usando o sistema inteiro como uma pessoa usaria (cargas, conta corrente, insumos, cartões, transferências, projeção, celular). Todas passaram com o banco novo.</li>
-          <li><strong>245 testes das regras de cálculo</strong>, que vieram da versão original e continuaram passando.</li>
+          <li><strong>350 checagens de navegador</strong> com Playwright, usando o sistema inteiro como uma pessoa usaria (cargas, conta corrente, insumos, cartões, transferências, projeção, celular). Todas passaram com o banco PostgreSQL.</li>
+          <li><strong>245 testes das regras de cálculo</strong> (saldos, faturas, parcelas e projeção).</li>
         </ul>
 
         <h2>Rodar e publicar</h2>
@@ -124,7 +128,6 @@
         <div class="acoes" style="margin:0">
           <a class="botao primario" href="https://caixa-resina-postgresql.onrender.com/">Abrir o sistema</a>
           <a class="botao" href="https://github.com/devthiagoferreira96-hue/caixa-resina-postgresql">Ver o código no GitHub</a>
-          <a class="botao" href="caixa-resina.html">Ver a versão original</a>
           <a class="botao" href="../#projetos">Voltar aos projetos</a>
         </div>
       </section>
