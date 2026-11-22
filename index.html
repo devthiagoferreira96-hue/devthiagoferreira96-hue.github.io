@@ -295,8 +295,8 @@
       pista.scrollTo({ left: 0 });
     });
     const passo = () => (pista.querySelector('.pcard:not([hidden])')?.offsetWidth || 280) + 14;
-    bloco.querySelector('[data-acao="voltar"]').addEventListener('click', () => pista.scrollBy({ left: -passo() * 2, behavior: 'smooth' }));
-    bloco.querySelector('[data-acao="avancar"]').addEventListener('click', () => pista.scrollBy({ left: passo() * 2, behavior: 'smooth' }));
+    bloco.querySelector('[data-acao="voltar"]').addEventListener('click', () => deslizar(pista.scrollLeft - passo() * 2));
+    bloco.querySelector('[data-acao="avancar"]').addEventListener('click', () => deslizar(pista.scrollLeft + passo() * 2));
     const todos = bloco.querySelector('[data-acao="todos"]');
     todos.addEventListener('click', () => {
       const ativo = pista.classList.toggle('todos');
@@ -305,18 +305,34 @@
     });
 
     // anda sozinho: um card a cada 3 s; para com o mouse em cima, com foco do teclado ou toque,
-    // no modo "Ver todos" e fora da tela. Para quem pediu menos movimento no sistema, também anda,
-    // mas pula de card sem o deslize
-    const poucoMovimento = window.matchMedia('(prefers-reduced-motion: reduce)');
+    // no modo "Ver todos" e fora da tela
     let mouseEmCima = false, focoDentro = false, tocando = false, visivel = false;
     const pausado = () => mouseEmCima || focoDentro || tocando || !visivel || document.hidden
       || pista.classList.contains('todos');
+    // desliza com animação própria: o Chrome não faz o "smooth" quando as animações do Windows estão desligadas
+    let animando = false;
+    function deslizar(destino) {
+      const inicio = pista.scrollLeft;
+      const fimMax = pista.scrollWidth - pista.clientWidth;
+      destino = Math.max(0, Math.min(destino, fimMax));
+      const distancia = destino - inicio;
+      if (!distancia || animando) return;
+      const duracao = Math.min(1100, 500 + Math.abs(distancia) * 0.6);
+      const suave = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+      const t0 = performance.now();
+      animando = true;
+      pista.style.scrollSnapType = 'none'; // o "encaixe" brigaria com a animação
+      (function passoAnim(agora) {
+        const t = Math.min(1, (agora - t0) / duracao);
+        pista.scrollLeft = inicio + distancia * suave(t);
+        if (t < 1 && !tocando) requestAnimationFrame(passoAnim);
+        else { pista.style.scrollSnapType = ''; animando = false; }
+      })(t0);
+    }
     setInterval(() => {
       if (pausado()) return;
       const fim = pista.scrollLeft + pista.clientWidth >= pista.scrollWidth - 8;
-      const jeito = poucoMovimento.matches ? 'instant' : 'smooth';
-      if (fim) pista.scrollTo({ left: 0, behavior: jeito });
-      else pista.scrollBy({ left: passo(), behavior: jeito });
+      deslizar(fim ? 0 : pista.scrollLeft + passo());
     }, 3000);
     // pausa só com o mouse em cima dos cards (não no título nem nos filtros)
     pista.addEventListener('mouseenter', () => { mouseEmCima = true; });
