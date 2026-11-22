@@ -78,6 +78,7 @@ section { padding: 72px 0; }
 .texto ul { padding-left: 1.2em; }
 .texto li { margin-bottom: .45em; }
 .texto strong { color: var(--texto); }
+.texto .nota { font-size: .92em; color: var(--suave); border-left: 3px solid var(--destaque); padding-left: 12px; }
 figure { margin: 30px 0; }
 figure img { border-radius: var(--raio); border: 1px solid var(--linha); box-shadow: var(--sombra); }
 figcaption { color: var(--suave); font-size: .88rem; margin-top: 10px; }
