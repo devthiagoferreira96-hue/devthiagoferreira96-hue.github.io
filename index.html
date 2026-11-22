@@ -305,16 +305,18 @@
     });
 
     // anda sozinho: um card a cada 3 s; para com o mouse em cima, com foco do teclado ou toque,
-    // no modo "Ver todos", fora da tela e para quem pediu menos movimento no sistema
+    // no modo "Ver todos" e fora da tela. Para quem pediu menos movimento no sistema, também anda,
+    // mas pula de card sem o deslize
     const poucoMovimento = window.matchMedia('(prefers-reduced-motion: reduce)');
     let mouseEmCima = false, focoDentro = false, tocando = false, visivel = false;
     const pausado = () => mouseEmCima || focoDentro || tocando || !visivel || document.hidden
-      || pista.classList.contains('todos') || poucoMovimento.matches;
+      || pista.classList.contains('todos');
     setInterval(() => {
       if (pausado()) return;
       const fim = pista.scrollLeft + pista.clientWidth >= pista.scrollWidth - 8;
-      if (fim) pista.scrollTo({ left: 0, behavior: 'smooth' });
-      else pista.scrollBy({ left: passo(), behavior: 'smooth' });
+      const jeito = poucoMovimento.matches ? 'instant' : 'smooth';
+      if (fim) pista.scrollTo({ left: 0, behavior: jeito });
+      else pista.scrollBy({ left: passo(), behavior: jeito });
     }, 3000);
     // pausa só com o mouse em cima dos cards (não no título nem nos filtros)
     pista.addEventListener('mouseenter', () => { mouseEmCima = true; });
