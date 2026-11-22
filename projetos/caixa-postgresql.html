@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Caixa + Resina com PostgreSQL · Thiago Proença</title>
+  <meta name="description" content="Estudo de caso: o sistema Caixa + Resina ganhou uma API REST em Node.js e um banco PostgreSQL, com login seguro e vários usuários.">
+  <meta property="og:title" content="Caixa + Resina com PostgreSQL · Estudo de caso">
+  <meta property="og:image" content="../img/caixa-postgresql/inicio.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="conteiner">
+      <a class="marca" href="../">Thiago Proença <span>— Desenvolvedor Full-Stack</span></a>
+      <nav class="menu" aria-label="Seções">
+        <a href="../#sobre">Sobre mim</a>
+        <a href="../#competencias">Competências</a>
+        <a href="../#experiencia">Experiência</a>
+        <a href="../#projetos">Projetos</a>
+        <a href="../#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="conteiner">
+      <div class="caso-cabeca">
+        <a class="voltar" href="../#projetos">← Todos os projetos</a>
+        <span class="rotulo" style="display:block">Estudo de caso</span>
+        <h1>Caixa + Resina com PostgreSQL</h1>
+        <p class="sub">O mesmo sistema do <a href="caixa-resina.html">Caixa + Resina</a>, agora com back-end: uma API REST em Node.js guardando tudo num banco PostgreSQL, com login no servidor e vários usuários.</p>
+        <dl class="fatos">
+          <div><dt>Tipo</dt><dd>API REST + banco de dados</dd></div>
+          <div><dt>Meu papel</dt><dd>Arquitetura, banco, API, segurança e testes</dd></div>
+          <div><dt>Plataforma</dt><dd>Node.js, PostgreSQL e web (PWA)</dd></div>
+          <div><dt>Código</dt><dd><a href="https://github.com/devthiagoferreira96-hue/caixa-resina-postgresql">GitHub</a></dd></div>
+        </dl>
+      </div>
+
+      <figure>
+        <img src="../img/caixa-postgresql/inicio.webp" alt="Tela inicial com o saldo total, o saldo de cada conta, as faturas do mês e os gastos por categoria, carregados do PostgreSQL" width="1600" height="1000">
+        <figcaption>As mesmas telas de antes, agora com os dados vindo do PostgreSQL.</figcaption>
+      </figure>
+
+      <div class="texto">
+        <h2>Por que fazer uma versão com servidor</h2>
+        <p>A versão original funciona 100% offline: os dados ficam criptografados no próprio aparelho. Isso é ótimo para a cliente, mas tem limites. Não dá para usar a mesma conta no celular e no computador, e cada aparelho é uma ilha. Nesta versão, os dados vão para um banco PostgreSQL de verdade, e a pessoa entra com usuário e senha de qualquer lugar.</p>
+        <p>O sistema da empresa continua como está. Esta é uma cópia separada, com dados fictícios, feita para mostrar o mesmo produto com outra arquitetura.</p>
+
+        <h2>A troca foi feita numa camada só</h2>
+        <p>Desde o começo, todas as telas leem e gravam dados por um único arquivo, no mesmo formato do Supabase: <code>from('lancamentos').select().eq().order()</code>. Para trocar o banco, substituí só essa camada. Ela passou a mandar a consulta para a API, que valida, monta o SQL com parâmetros e executa no PostgreSQL. As telas do caixa e da resina não precisaram ser reescritas.</p>
+      </div>
+
+      <div class="bloco-codigo">
+        <span class="rot">O navegador pede</span>
+<pre>{ "tabela": "lancamentos", "op": "select",
+  "filtros": [["gte", "vencimento", "2026-11-01"], ["eq", "pago", false]],
+  "ordem": { "c": "vencimento" } }</pre>
+      </div>
+      <div class="bloco-codigo">
+        <span class="rot">O servidor executa</span>
+<pre>select * from lancamentos
+ where usuario_id = $1 and "vencimento" >= $2 and "pago" = $3
+ order by "vencimento" asc nulls first, seq</pre>
+      </div>
+
+      <div class="texto">
+        <h2>O banco de dados</h2>
+        <ul>
+          <li><strong>18 tabelas</strong> (caixa, cartões e o módulo de resina), com índices nas consultas mais usadas.</li>
+          <li><strong>Isolamento por usuário dentro do banco:</strong> as chaves estrangeiras são compostas, como <code>(usuario_id, conta_id)</code>. Mesmo que o servidor tivesse um erro, um lançamento não conseguiria apontar para a conta de outra pessoa.</li>
+          <li><strong>Regras de exclusão no próprio banco:</strong> não apaga categoria em uso (<code>RESTRICT</code>), excluir um cartão leva as compras e parcelas (<code>CASCADE</code>), e excluir uma pessoa só tira o nome dela dos lançamentos (<code>SET NULL</code>).</li>
+          <li><strong>Mensagens que qualquer pessoa entende:</strong> as restrições têm nomes pensados para isso. Quando o banco recusa uma exclusão, a tela mostra "Esse item já foi usado em cargas" em vez de um erro técnico.</li>
+          <li><strong>Restaurar backup é tudo ou nada:</strong> roda numa transação com as ligações conferidas no final. Um arquivo com problema não apaga nenhum dado.</li>
+        </ul>
+      </div>
+
+      <div class="celulares">
+        <figure><img src="../img/caixa-postgresql/celular-login.webp" alt="Tela de login no celular com usuário e senha" width="640" height="1385" loading="lazy"></figure>
+        <figure><img src="../img/caixa-postgresql/celular-inicio.webp" alt="Tela inicial no celular depois de entrar" width="640" height="1385" loading="lazy"></figure>
+      </div>
+
+      <div class="texto">
+        <h2>Login e segurança</h2>
+        <ul>
+          <li><strong>A senha nunca fica no banco:</strong> só um hash (scrypt com sal), comparado em tempo constante. O código de recuperação recebe o mesmo cuidado.</li>
+          <li><strong>Sessão em cookie <code>httpOnly</code> + <code>SameSite=Strict</code>:</strong> o JavaScript da página não consegue ler o cookie, e outros sites não conseguem usá-lo.</li>
+          <li><strong>Trocar a senha desconecta os outros aparelhos</strong>, e o código de recuperação muda toda vez que é usado.</li>
+          <li><strong>Limite de tentativas:</strong> depois de 5 erros, o servidor faz esperar 30 segundos. Ele também responde no mesmo tempo para usuários que não existem, para não revelar quem tem conta.</li>
+          <li><strong>Sem SQL montado com texto do usuário:</strong> os valores vão sempre como parâmetros, os nomes de tabela e coluna passam por uma lista permitida, e todo comando filtra pelo usuário logado.</li>
+        </ul>
+      </div>
+
+      <figure>
+        <img src="../img/caixa-postgresql/codigo-recuperacao.webp" alt="Janela com o código de recuperação gerado pelo servidor e botões para mandar no WhatsApp, compartilhar ou copiar" width="1600" height="1000" loading="lazy">
+        <figcaption>O código de recuperação é gerado no servidor, que guarda só o hash.</figcaption>
+      </figure>
+
+      <div class="texto">
+        <h2>Testes</h2>
+        <ul>
+          <li><strong>15 testes da API</strong> rodando num PostgreSQL de verdade, em memória (PGlite): login, limite de tentativas, recuperação de senha, filtros, <code>RESTRICT</code>, <code>CASCADE</code> e <code>SET NULL</code>, isolamento entre usuários, tentativas de SQL injection e backup quebrado.</li>
+          <li><strong>350 checagens de navegador</strong> com Playwright, usando o sistema inteiro como uma pessoa usaria (cargas, conta corrente, insumos, cartões, transferências, projeção, celular). Todas passaram com o banco novo.</li>
+          <li><strong>245 testes das regras de cálculo</strong>, que vieram da versão original e continuaram passando.</li>
+        </ul>
+
+        <h2>Rodar e publicar</h2>
+        <p>Para desenvolver, o banco sobe com um comando, sem instalar nada (PGlite), ou com Docker. Para publicar, o repositório já vem pronto para o <strong>Render</strong> (servidor) + <strong>Neon</strong> (PostgreSQL), os dois no plano gratuito.</p>
+        <p><strong>Tecnologias:</strong> Node.js, Express 5, PostgreSQL 17 (node-postgres), JWT, scrypt, JavaScript (ES Modules), Vite, Tailwind CSS, PGlite, Playwright, Docker e Render.</p>
+      </div>
+
+      <figure>
+        <img src="../img/caixa-postgresql/acesso-criar.webp" alt="Tela de primeiro acesso para criar usuário e senha no servidor" width="1600" height="1000" loading="lazy">
+        <figcaption>Primeiro acesso: o usuário é criado no servidor e pode começar com dados de exemplo.</figcaption>
+      </figure>
+
+      <section style="padding:48px 0 72px">
+        <div class="acoes" style="margin:0">
+          <a class="botao primario" href="https://github.com/devthiagoferreira96-hue/caixa-resina-postgresql">Ver o código no GitHub</a>
+          <a class="botao" href="caixa-resina.html">Ver a versão original</a>
+          <a class="botao" href="../#projetos">Voltar aos projetos</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="conteiner">
+      <span>© 2026 Thiago Proença</span>
+      <span>Prints com dados fictícios de demonstração.</span>
+    </div>
+  </footer>
+</body>
+</html>
