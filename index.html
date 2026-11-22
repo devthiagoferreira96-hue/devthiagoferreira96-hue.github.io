@@ -17,7 +17,10 @@
   <header class="topo">
     <div class="conteiner">
       <a class="marca" href="#inicio">Thiago Proença <span id="secao-atual">— Desenvolvedor Full-Stack</span></a>
-      <nav class="menu" aria-label="Seções">
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir o menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="menu" id="menu" aria-label="Seções">
         <a href="#sobre">Sobre mim</a>
         <a href="#competencias">Competências</a>
         <a href="#experiencia">Experiência</a>
@@ -118,6 +121,24 @@
         <span class="rotulo">Alguns dos meus trabalhos</span>
         <h2>Projetos</h2>
 
+        <article class="destaque-proj">
+          <a class="destaque-img" href="projetos/caixa-postgresql.html" tabindex="-1" aria-hidden="true">
+            <img src="img/caixa-postgresql/inicio.webp" alt="" width="1600" height="1000">
+          </a>
+          <div class="destaque-corpo">
+            <span class="tipo"><span class="online">Online</span> Projeto em destaque · em uso por uma empresa</span>
+            <h3>Caixa + Resina</h3>
+            <p>Gestão financeira e de produção para uma empresa de extração de resina: caixa, cartões, projeção de saldo entre meses, cargas, produtores e conta corrente. Substituiu várias planilhas e hoje roda com API REST em Express e banco PostgreSQL.</p>
+            <ul class="etiquetas"><li>Node.js</li><li>Express</li><li>PostgreSQL</li><li>JWT</li><li>PWA</li></ul>
+            <div class="acoes">
+              <a class="botao primario" href="https://caixa-resina-postgresql.onrender.com/" target="_blank" rel="noopener">Abrir o sistema ↗</a>
+              <a class="botao" href="projetos/caixa-postgresql.html">Estudo de caso</a>
+              <a class="botao" href="https://github.com/devthiagoferreira96-hue/caixa-resina-postgresql" target="_blank" rel="noopener">Código</a>
+            </div>
+            <p class="nota-render">O servidor gratuito dorme sem uso: o primeiro acesso pode levar até 1 minuto.</p>
+          </div>
+        </article>
+
         <div class="bloco-proj" data-carrossel="pessoais">
           <div class="proj-topo">
             <div>
@@ -157,12 +178,15 @@
         <span class="rotulo">Entre em contato</span>
         <h2>Vamos trabalhar juntos</h2>
         <p class="sub">Tem uma planilha que virou dor de cabeça ou uma ideia de sistema? Me conte o problema e eu digo como dá para resolver.</p>
+        <div class="acoes">
+          <a class="botao primario" href="https://wa.me/5515998713047" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+          <a class="botao" href="mailto:dev.thiagoferreira96@gmail.com">Enviar e-mail</a>
+        </div>
         <div class="contatos">
-          <a class="contato-card" href="https://wa.me/5515998713047" target="_blank" rel="noopener"><span>WhatsApp</span><b>(15) 99871-3047</b></a>
-          <a class="contato-card" href="tel:+5515998713047"><span>Telefone</span><b>(15) 99871-3047</b></a>
-          <a class="contato-card" href="mailto:dev.thiagoferreira96@gmail.com"><span>E-mail</span><b>dev.thiagoferreira96@gmail.com</b></a>
-          <a class="contato-card" href="https://github.com/devthiagoferreira96-hue" target="_blank" rel="noopener"><span>GitHub</span><b>github.com/devthiagoferreira96-hue</b></a>
-          <a class="contato-card" href="https://www.linkedin.com/in/thiago-proen%C3%A7a-3567a3385" target="_blank" rel="noopener"><span>LinkedIn</span><b>linkedin.com/in/thiago-proença</b></a>
+          <a class="contato-card" href="https://wa.me/5515998713047" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="" width="18" height="18"><span>WhatsApp e telefone</span><b>(15) 99871-3047</b></a>
+          <a class="contato-card" href="mailto:dev.thiagoferreira96@gmail.com"><img src="https://cdn.simpleicons.org/gmail/EA4335" alt="" width="18" height="18"><span>E-mail</span><b>dev.thiagoferreira96@gmail.com</b></a>
+          <a class="contato-card" href="https://github.com/devthiagoferreira96-hue" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/github/ffffff" alt="" width="18" height="18"><span>GitHub</span><b>github.com/devthiagoferreira96-hue</b></a>
+          <a class="contato-card" href="https://www.linkedin.com/in/thiago-proen%C3%A7a-3567a3385" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="#0A66C2" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg><span>LinkedIn</span><b>linkedin.com/in/thiago-proença</b></a>
         </div>
       </div>
     </section>
@@ -200,8 +224,6 @@
     pessoais: {
       filtros: [['todos', 'Todos'], ['web', 'Aplicações web'], ['site', 'Sites'], ['desktop', 'Desktop']],
       itens: [
-        { cat: 'web', tipo: 'Aplicação web + API · online', titulo: 'Caixa + Resina', img: 'img/caixa-postgresql/inicio.webp', url: 'projetos/caixa-postgresql.html',
-          texto: 'Gestão financeira e de produção para uma empresa de extração de resina, com API REST em Express, banco PostgreSQL, login com sessão segura e 610 checagens automatizadas.', tags: ['Node.js', 'Express', 'PostgreSQL', 'JWT'] },
         { cat: 'web', tipo: 'Aplicação web', titulo: 'Banho e Tosa', img: 'img/banho-e-tosa/agenda.webp', url: 'projetos/banho-e-tosa.html',
           texto: 'Agenda em tempo real, leva e traz com rota no Google Maps, cobrança por serviço e porte e fechamento de caixa do dia com histórico imutável.', tags: ['JavaScript', 'Supabase', 'PostgreSQL', 'PWA'] },
         { cat: 'site', tipo: 'Loja online + API', titulo: 'Loja online Pet Shop', img: 'img/loja-pet/produtos.webp', url: 'projetos/loja-pet.html',
@@ -302,7 +324,27 @@
     pista.addEventListener('touchstart', () => { tocando = true; clearTimeout(soltar); }, { passive: true });
     pista.addEventListener('touchend', () => { soltar = setTimeout(() => { tocando = false; }, 4000); }, { passive: true });
     new IntersectionObserver(([e]) => { visivel = e.isIntersecting; }, { threshold: 0.3 }).observe(pista);
+
+    // degradê na borda direita enquanto tiver card escondido, para mostrar que dá para rolar
+    const borda = () => pista.classList.toggle('no-fim', pista.scrollLeft + pista.clientWidth >= pista.scrollWidth - 8);
+    pista.addEventListener('scroll', borda, { passive: true });
+    window.addEventListener('resize', borda);
+    filtros.addEventListener('click', () => requestAnimationFrame(borda));
+    borda();
   });
+
+  // ------------------------------------------------------------ menu no celular
+  const menuBotao = document.querySelector('.menu-botao');
+  const menu = document.getElementById('menu');
+  const abrirMenu = (abrir) => {
+    menu.classList.toggle('aberto', abrir);
+    menuBotao.setAttribute('aria-expanded', String(abrir));
+    menuBotao.setAttribute('aria-label', abrir ? 'Fechar o menu' : 'Abrir o menu');
+  };
+  menuBotao.addEventListener('click', () => abrirMenu(!menu.classList.contains('aberto')));
+  menu.addEventListener('click', (e) => { if (e.target.closest('a')) abrirMenu(false); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && menu.classList.contains('aberto')) { abrirMenu(false); menuBotao.focus(); } });
+  document.addEventListener('click', (e) => { if (!e.target.closest('.topo')) abrirMenu(false); });
 
   // ------------------------------------------------------------ seção atual no topo + ponto na linha
   const rotulo = document.getElementById('secao-atual');
