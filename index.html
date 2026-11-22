@@ -316,14 +316,16 @@
       if (fim) pista.scrollTo({ left: 0, behavior: 'smooth' });
       else pista.scrollBy({ left: passo(), behavior: 'smooth' });
     }, 3000);
-    bloco.addEventListener('mouseenter', () => { mouseEmCima = true; });
-    bloco.addEventListener('mouseleave', () => { mouseEmCima = false; });
-    bloco.addEventListener('focusin', () => { focoDentro = true; });
+    // pausa só com o mouse em cima dos cards (não no título nem nos filtros)
+    pista.addEventListener('mouseenter', () => { mouseEmCima = true; });
+    pista.addEventListener('mouseleave', () => { mouseEmCima = false; });
+    // pausa com foco do teclado; o clique do mouse numa seta ou filtro não conta
+    bloco.addEventListener('focusin', (e) => { focoDentro = e.target.matches(':focus-visible'); });
     bloco.addEventListener('focusout', (e) => { if (!bloco.contains(e.relatedTarget)) focoDentro = false; });
     let soltar;
     pista.addEventListener('touchstart', () => { tocando = true; clearTimeout(soltar); }, { passive: true });
     pista.addEventListener('touchend', () => { soltar = setTimeout(() => { tocando = false; }, 4000); }, { passive: true });
-    new IntersectionObserver(([e]) => { visivel = e.isIntersecting; }, { threshold: 0.3 }).observe(pista);
+    new IntersectionObserver(([e]) => { visivel = e.isIntersecting; }, { threshold: 0.15 }).observe(pista);
 
     // degradê na borda direita enquanto tiver card escondido, para mostrar que dá para rolar
     const borda = () => pista.classList.toggle('no-fim', pista.scrollLeft + pista.clientWidth >= pista.scrollWidth - 8);
