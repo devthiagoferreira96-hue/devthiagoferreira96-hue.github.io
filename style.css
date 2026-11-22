@@ -143,6 +143,7 @@ figcaption { color: var(--suave); font-size: .88rem; margin-top: 10px; }
 .selos { display: flex; flex-wrap: wrap; gap: 6px; }
 .selo { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: .72rem; padding: 5px 9px; border-radius: 5px; background: var(--fundo); border: 1px solid var(--linha); color: #c6d0dd; }
 .selo img { width: 13px; height: 13px; }
+.selo .generico { flex: none; color: var(--cor); opacity: .85; }
 
 /* experiência */
 .linha-tempo { position: relative; margin-top: 28px; padding-left: 26px; }

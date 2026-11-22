@@ -177,19 +177,22 @@
 
   <script>
   // ------------------------------------------------------------ competências
-  const ICONE = (slug, cor) => `https://cdn.simpleicons.org/${slug}/${cor}`;
+  // slug do Simple Icons, ou um arquivo próprio em img/icones/ (logos que o Simple Icons não tem)
+  const ICONE = (slug, cor) => slug.includes('.') ? `img/icones/${slug}` : `https://cdn.simpleicons.org/${slug}/${cor}`;
+  // conceitos sem logo (APIs REST, WebSocket...) ganham um ícone genérico na cor da categoria
+  const GENERICO = '<svg class="generico" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M8 1.5l5.6 3.25v6.5L8 14.5l-5.6-3.25v-6.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>';
   const COMPETENCIAS = [
     { nome: 'Frontend', cor: '#38bdf8', itens: [['HTML5', 'html5', 'E34F26'], ['CSS3', 'css', '1572B6'], ['JavaScript', 'javascript', 'F7DF1E'], ['TypeScript', 'typescript', '3178C6'], ['React', 'react', '61DAFB'], ['Next.js', 'nextdotjs', 'ffffff'], ['Tailwind CSS', 'tailwindcss', '06B6D4']] },
-    { nome: 'Backend', cor: '#34d399', itens: [['Node.js', 'nodedotjs', '5FA04E'], ['NestJS', 'nestjs', 'E0234E'], ['APIs REST', null], ['WebSocket', null], ['Auth.js / OAuth', 'auth0', 'EB5424'], ['C#', null]] },
-    { nome: 'Banco de dados', cor: '#fbbf24', itens: [['PostgreSQL', 'postgresql', '4169E1'], ['Supabase', 'supabase', '3FCF8E'], ['SQLite', 'sqlite', '7FD3FF'], ['IndexedDB', null], ['Drizzle ORM', 'drizzle', 'C5F74F'], ['TypeORM', 'typeorm', 'FE0803']] },
-    { nome: 'Mobile e desktop', cor: '#f472b6', itens: [['React Native', 'react', '61DAFB'], ['Expo', 'expo', 'ffffff'], ['PWA', 'pwa', '5A0FC8'], ['Electron', 'electron', '47848F'], ['Windows Forms', null]] },
-    { nome: 'Ferramentas', cor: '#a78bfa', itens: [['Git', 'git', 'F05032'], ['GitHub', 'github', 'ffffff'], ['GitHub Actions', 'githubactions', '2088FF'], ['Docker', 'docker', '2496ED'], ['Playwright', null], ['Vercel', 'vercel', 'ffffff'], ['Vite', 'vite', '646CFF'], ['Claude Code', 'claude', 'D97757']] },
+    { nome: 'Backend', cor: '#34d399', itens: [['Node.js', 'nodedotjs', '5FA04E'], ['NestJS', 'nestjs', 'E0234E'], ['APIs REST', null], ['WebSocket', null], ['Auth.js / OAuth', 'authjs.webp'], ['C#', 'csharp.svg']] },
+    { nome: 'Banco de dados e ORMs', cor: '#fbbf24', itens: [['PostgreSQL', 'postgresql', '4169E1'], ['Supabase', 'supabase', '3FCF8E'], ['SQLite', 'sqlite', '7FD3FF'], ['IndexedDB', null], ['Drizzle ORM', 'drizzle', 'C5F74F'], ['TypeORM', 'typeorm', 'FE0803']] },
+    { nome: 'Mobile e desktop', cor: '#f472b6', itens: [['React Native', 'react', '61DAFB'], ['Expo', 'expo', 'ffffff'], ['PWA', 'pwa', '5A0FC8'], ['Electron', 'electron', '47848F'], ['Windows Forms (.NET)', 'dotnet.svg']] },
+    { nome: 'Ferramentas', cor: '#a78bfa', itens: [['Git', 'git', 'F05032'], ['GitHub', 'github', 'ffffff'], ['GitHub Actions', 'githubactions', '2088FF'], ['Docker', 'docker', '2496ED'], ['Playwright', 'playwright.svg'], ['Vercel', 'vercel', 'ffffff'], ['Vite', 'vite', '646CFF'], ['Claude Code', 'claude', 'D97757']] },
     { nome: 'Redes', cor: '#fb923c', itens: [['Cisco Packet Tracer', 'cisco', '1BA0D7'], ['Roteamento', null], ['VLANs', null]] },
   ];
   document.getElementById('comp-grade').innerHTML = COMPETENCIAS.map((c) => `
     <div class="comp" style="--cor:${c.cor}">
       <h3>${c.nome}</h3>
-      <div class="selos">${c.itens.map(([n, slug, cor]) => `<span class="selo">${slug ? `<img src="${ICONE(slug, cor)}" alt="" width="13" height="13" loading="lazy" onerror="this.remove()">` : ''}${n}</span>`).join('')}</div>
+      <div class="selos">${c.itens.map(([n, slug, cor]) => `<span class="selo">${slug ? `<img src="${ICONE(slug, cor)}" alt="" width="13" height="13" loading="lazy" onerror="this.remove()">` : GENERICO}${n}</span>`).join('')}</div>
     </div>`).join('');
 
   // ------------------------------------------------------------ projetos
